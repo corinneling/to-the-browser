@@ -1,36 +1,40 @@
 const a = require('indefinite');
 
-let tri = {
+let triangle = {
   outputs: document.querySelectorAll('output'),
   inputs: document.querySelectorAll("input[type=range]"),
   btn: document.getElementById('submitBtn'),
   answer: document.getElementById('triangleType')
 }
-tri.iValues = Array.from(tri.inputs).map(inputs => inputs.value);
+triangle.iValues = Array.from(triangle.inputs).map(inputs => inputs.value);
 
 startListeners = _ => {
-  tri.btn.addEventListener("click", showAnswer);
-  tri.inputs.forEach((i) => {
+  triangle.btn.addEventListener("click", showAnswer);
+  getRanges();
+};
+
+getRanges = _ => {
+  triangle.inputs.forEach((i) => {
         i.addEventListener('input', showRangeValues);
   });
 };
 
 showRangeValues = _ => {
-   for (var i=0; i<tri.inputs.length; i++) {
-      tri.outputs[i].value = tri.inputs[i].value;
+   for (var i=0; i<triangle.inputs.length; i++) {
+      triangle.outputs[i].value = triangle.inputs[i].value;
     };
   };
 
-getInputValues = _ => Array.from(tri.inputs).map(inputs => inputs.value);
+let getInputValues = _ => Array.from(triangle.inputs).map(inputs => inputs.value);
 
 
 classifyTriangle = _ => {
-  let [ aa, b, c ] = tri.iValues;
+  let [ side1, side2, side3 ] = getInputValues();
 
   let type = null;
-  if (a == b && b == c){
+  if (side1 == side2 && side2 == side3){
     type = 'equilateral';
-	} else if(a == b || b == c || a == c) {
+	} else if(side1 == side2 || side2 == side3 || side1 == side3) {
     type = 'isosceles';
 	} else {
     type = 'scalene';
@@ -40,11 +44,10 @@ classifyTriangle = _ => {
 
  showAnswer = _ => {
    let type = classifyTriangle();
-   tri.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
+   triangle.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
  };
 
 startListeners();
-// so cool!
 // questions:
 /*
   1. what is the different bw Array.prototype.map and .map
