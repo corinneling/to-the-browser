@@ -6,7 +6,6 @@ let triangle = {
   btn: document.getElementById('submitBtn'),
   answer: document.getElementById('triangleType')
 }
-triangle.iValues = Array.from(triangle.inputs).map(inputs => inputs.value);
 
 startListeners = _ => {
   triangle.btn.addEventListener("click", showAnswer);
