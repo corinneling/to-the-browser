@@ -3,43 +3,37 @@
 
 <head>
   <title>Find the Type of Triangle</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="main">
-  	<h1>Create A Triangle</h1>
-  	<p>Select the length of each side of your triangle to find out what type it is.</p>
-  	<form name="triangleForm" id="triForm">
-  		<div>
-  		  <label for="side1">Side 1:</label>
-        <input id="side1" type="range" step="1"
-               min="1" max="100" value="50"
-               aria-valuemin="1" aria-valuemax="100" aria-valuenow="50"/>
-  		  <output for="side1">50</output>
+    <h1>Create A Triangle</h1>
+    <p>Select the length of each side of your triangle to find out what type it is.</p>
+    <form name="triangleForm" id="triForm">
+      <div>
+        <label for="side1">Side 1:</label>
+        <input id="side1" type="range" step="1" min="1" max="100" value="50" aria-valuemin="1" aria-valuemax="100" aria-valuenow="50" />
+        <output for="side1">50</output>
+      </div>
 
-  		</div>
+      <div>
+        <label for="side2">Side 2:</label>
+        <input id="side2" type="range" step="1" min="1" max="100" value="50" aria-valuemin="1" aria-valuemax="100" aria-valuenow="50" />
+        <output for="side2">50</output>
+      </div>
 
-  		<div>
-  		  <label for="side2">Side 2:</label>
-        <input id="side2" type="range" step="1"
-               min="1" max="100" value="50"
-               aria-valuemin="1" aria-valuemax="100" aria-valuenow="50"/>
-  		  <output for="side2">50</output>
-  		</div>
-
-  		<div>
-  		<label for="side3">Side 3:</label>
-        <input id="side3" type="range" step="1"
-               min="1" max="100" value="50"
-               aria-valuemin="1" aria-valuemax="100" aria-valuenow="50"/>
-  			<output for="side3">50</output>
-  		</div>
-  		<input type="button" value="Submit" id="submitBtn"/>
-  		<p id="triangleType"></p>
-  	</form>
+      <div>
+        <label for="side3">Side 3:</label>
+        <input id="side3" type="range" step="1" min="1" max="100" value="50" aria-valuemin="1" aria-valuemax="100" aria-valuenow="50" />
+        <output for="side3">50</output>
+      </div>
+      <input type="button" value="Submit" id="submitBtn" />
+      <p id="triangleType"></p>
+    </form>
   </div>
 
-   <script src="bundle.js"></script>
+  <script src="bundle.js"></script>
 </body>
+
 </html>

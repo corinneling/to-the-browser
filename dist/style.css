@@ -1,35 +1,35 @@
 .main {
-	width: 100%;
-	text-align: center;
-	padding: 0.5em 0;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	color: #666;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #666;
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 p {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 div {
-	margin-top: 2em;
+  margin-top: 2em;
 }
 
-input[type=range] {
- -webkit-appearance: none;
+input[type="range"] {
+  -webkit-appearance: none;
   width: 35%;
   background: transparent;
 }
 
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   cursor: pointer;
   background: transparent;
@@ -37,17 +37,17 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
-	-webkit-appearance: none;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   background-color: #546bdc;
-	border-radius: 50%;
+  border-radius: 50%;
   height: 2em;
   width: 2em;
-	cursor: pointer;
+  cursor: pointer;
   margin-top: -9px;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
   background: #ddd;
@@ -55,26 +55,26 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 1px solid #ddd;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #666;
 }
 
 #submitBtn {
-	padding: 0.5em 2em;
-	background-color: #546bdc;
-	color: #fff;
-	font-size: 1em;
-	margin: 2em;
-	width: 43%;
-	cursor: pointer;
-	transition: .3s;
+  padding: 0.5em 2em;
+  background-color: #546bdc;
+  color: #fff;
+  font-size: 1em;
+  margin: 2em;
+  width: 43%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #submitBtn:hover {
-	background-color: #6b83f9;
+  background-color: #6b83f9;
 }
 
 #triangleType {
-	margin: 0 0 2em;
-	font-size: 1.3em;
+  margin: 0 0 2em;
+  font-size: 1.3em;
 }
