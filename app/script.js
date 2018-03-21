@@ -50,8 +50,6 @@ classifyTriangle = _ => {
 startListeners();
 // questions:
 /*
-  1. what is the different bw Array.prototype.map and .map
-  2. need help with getInputValues
-  3. how does bundle.js work? do you have to run npx webpack everytime you make an update
-  4. whats the difference bw dependencies and devDependencies
+  1. how does bundle.js work? do you have to run npx webpack everytime you make an update
+  2. whats the difference bw dependencies and devDependencies
 */
