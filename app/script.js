@@ -26,8 +26,8 @@ const CreateTriangle = () => {
   const getInputValues = () =>
     Array.from(triangle.inputs).map(inputs => inputs.value);
 
-  const classifyTriangle = () => {
-    let [side1, side2, side3] = getInputValues();
+  const classifyTriangle = (value) => {
+    let [side1, side2, side3] = value;
 
     let type = null;
     if (side1 == side2 && side2 == side3) {
@@ -41,7 +41,7 @@ const CreateTriangle = () => {
   };
 
   const addTypeToString = () => {
-    let triangle_type = classifyTriangle();
+    let triangle_type = classifyTriangle(getInputValues());
     triangle.answer.innerHTML =
       "You created " + a(`${triangle_type}`) + " triangle";
   };
