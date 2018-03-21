@@ -1,11 +1,11 @@
-const a = require('indefinite');
+const a = require("indefinite");
 
 let triangle = {
-  outputs: document.querySelectorAll('output'),
+  outputs: document.querySelectorAll("output"),
   inputs: document.querySelectorAll("input[type=range]"),
-  btn: document.getElementById('submitBtn'),
-  answer: document.getElementById('triangleType')
-}
+  btn: document.getElementById("submitBtn"),
+  answer: document.getElementById("triangleType")
+};
 
 const startListeners = _ => {
   triangle.btn.addEventListener("click", showAnswer);
@@ -13,38 +13,39 @@ const startListeners = _ => {
 };
 
 const getRanges = _ => {
-  triangle.inputs.forEach((i) => {
-        i.addEventListener('input', showRangeValues);
+  triangle.inputs.forEach(i => {
+    i.addEventListener("input", showRangeValues);
   });
 };
 
 const showRangeValues = _ => {
-   for (var i=0; i<triangle.inputs.length; i++) {
-      triangle.outputs[i].value = triangle.inputs[i].value;
-    };
-  };
+  for (var i = 0; i < triangle.inputs.length; i++) {
+    triangle.outputs[i].value = triangle.inputs[i].value;
+  }
+};
 
-const getInputValues = _ => Array.from(triangle.inputs).map(inputs => inputs.value);
-
+const getInputValues = _ =>
+  Array.from(triangle.inputs).map(inputs => inputs.value);
 
 const classifyTriangle = _ => {
-  let [ side1, side2, side3 ] = getInputValues();
+  let [side1, side2, side3] = getInputValues();
 
   let type = null;
-  if (side1 == side2 && side2 == side3){
-    type = 'equilateral';
-	} else if(side1 == side2 || side2 == side3 || side1 == side3) {
-    type = 'isosceles';
-	} else {
-    type = 'scalene';
-	};
+  if (side1 == side2 && side2 == side3) {
+    type = "equilateral";
+  } else if (side1 == side2 || side2 == side3 || side1 == side3) {
+    type = "isosceles";
+  } else {
+    type = "scalene";
+  }
   return type;
 };
 
- const showAnswer = _ => {
-   let triangle_type = classifyTriangle();
-   triangle.answer.innerHTML = "You created " + a(`${triangle_type}`) + " triangle";
- };
+const showAnswer = _ => {
+  let triangle_type = classifyTriangle();
+  triangle.answer.innerHTML =
+    "You created " + a(`${triangle_type}`) + " triangle";
+};
 
 startListeners();
 
