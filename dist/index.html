@@ -16,24 +16,30 @@
   		<div class="one">
   		 <label>
         <span>Side 1:</span>
-        <input name="size1" id="sizeInput1" type="range" value="1" min="1"/>
-  		  <output name="sizeOuput" id="sizeOuput1">1</output>
+        <input id="size1" type="range" step="1"
+               min="1" max="100" value="1"
+               aria-valuemin="1" aria-valuemax="100" aria-valuenow="1"/>
+  		  <output for="size1">1</output>
       </label>
   		</div>
 
   		<div class="two">
   		<label>
         <span>Side 2:</span>
-        <input name="size2" id="sizeInput2" type="range" value="1" min="1" />
-  			<output name="sizeOuput" id="sizeOuput2">1</output>
+        <input id="size2" type="range" step="1"
+               min="1" max="100" value="1"
+               aria-valuemin="1" aria-valuemax="100" aria-valuenow="1"/>
+  			<output for="size2">1</output>
       </label>
   		</div>
 
   		<div class="three">
   		<label>
         <span>Side 3:</span>
-        <input name="size3" id="sizeInput3" type="range" value="1" min="1" />
-  			<output name="sizeOuput" id="sizeOuput3">1</output>
+        <input id="size3" type="range" step="1"
+               min="1" max="100" value="1"
+               aria-valuemin="1" aria-valuemax="100" aria-valuenow="1"/>
+  			<output for="size3">1</output>
       </label>
   		</div>
   		<input type="button" value="Submit" id="submitBtn">
