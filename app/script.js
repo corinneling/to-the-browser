@@ -7,27 +7,27 @@ let triangle = {
   answer: document.getElementById('triangleType')
 }
 
-startListeners = _ => {
+const startListeners = _ => {
   triangle.btn.addEventListener("click", showAnswer);
   getRanges();
 };
 
-getRanges = _ => {
+const getRanges = _ => {
   triangle.inputs.forEach((i) => {
         i.addEventListener('input', showRangeValues);
   });
 };
 
-showRangeValues = _ => {
+const showRangeValues = _ => {
    for (var i=0; i<triangle.inputs.length; i++) {
       triangle.outputs[i].value = triangle.inputs[i].value;
     };
   };
 
-let getInputValues = _ => Array.from(triangle.inputs).map(inputs => inputs.value);
+const getInputValues = _ => Array.from(triangle.inputs).map(inputs => inputs.value);
 
 
-classifyTriangle = _ => {
+const classifyTriangle = _ => {
   let [ side1, side2, side3 ] = getInputValues();
 
   let type = null;
@@ -41,12 +41,15 @@ classifyTriangle = _ => {
   return type;
 };
 
- showAnswer = _ => {
-   let type = classifyTriangle();
-   triangle.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
+ const showAnswer = _ => {
+   let triangle_type = classifyTriangle();
+   triangle.answer.innerHTML = "You created " + a(`${triangle_type}`) + " triangle";
  };
 
 startListeners();
+
+module.exports = classifyTriangle();
+
 // questions:
 /*
   1. how does bundle.js work? do you have to run npx webpack everytime you make an update
