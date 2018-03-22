@@ -9,7 +9,12 @@ const SendTriangle = () => {
 
   const addTypeToString = () => {
     let type = classify(getInputValues());
-    form.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
+    if (type === "imaginary") {
+      form.answer.innerHTML =
+        "Sorry, that's " + a(`${type}`) + " triangle. Try again!";
+    } else {
+      form.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
+    }
   };
 
   const showAnswer = () => {

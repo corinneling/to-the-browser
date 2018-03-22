@@ -1,5 +1,4 @@
 const expect = require("chai").expect;
-const sinon = require("sinon");
 const classify = require('../app/classify');
 
 
@@ -15,5 +14,9 @@ describe("Triangle", function() {
   it("returns scalene when 2 sides are equal", function() {
     const arr = [2, 3, 4];
     expect(classify(arr)).to.equal('scalene');
+  });
+  it("returns imaginary when triangle inequality therom is false", function() {
+    const arr = [2, 3, 25];
+    expect(classify(arr)).to.equal('imaginary');
   });
 });
