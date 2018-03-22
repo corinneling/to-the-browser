@@ -1,7 +1,7 @@
-const a = require("indefinite");
 const { getRanges } = require("./ranges.js");
 const { form } = require("./store.js");
 const classify = require("./classify.js");
+const message = require("./message.js");
 
 const SendTriangle = () => {
   const getInputValues = () =>
@@ -9,13 +9,7 @@ const SendTriangle = () => {
 
   const addTypeToString = () => {
     let type = classify(getInputValues());
-    // let message = aMessageDecision(type);
-
-    if(type === 'imaginary'){
-      form.answer.innerHTML = "Sorry, that's " + a(`${type}`) + " triangle. Try again!";
-    } else {
-      form.answer.innerHTML = "You created " + a(`${type}`) + " triangle";
-    }
+    return message(type);
   };
 
   const showAnswer = () => {
@@ -24,7 +18,6 @@ const SendTriangle = () => {
 
   return { showAnswer };
 };
-
 
 (function initApplication() {
   SendTriangle().showAnswer();
