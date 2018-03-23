@@ -1,6 +1,11 @@
 module.exports = {
-  entry: './app/script.js',
+  entry: "./app/script.js",
   output: {
-    filename: 'bundle.js'
-  }
+    filename: "bundle.js"
+  },
+  devtool: "source-map",
+  devServer: {
+    contentBase: "./dist"
+  },
+  mode: "production"
 };

@@ -1,25 +1,27 @@
 const { getRanges } = require("./ranges.js");
-const { form } = require("./store.js");
-const classify = require("./classify.js");
-const message = require("./message.js");
+const classifyTriangle = require("./classify.js");
+const messageConstructor = require("./message.js");
 
-const SendTriangle = () => {
-  const getInputValues = () =>
-    Array.from(form.inputs).map(inputs => inputs.value);
 
-  const addTypeToString = () => {
-    let type = classify(getInputValues());
-    return message(type);
-  };
+const SendTriangle = {
+  btn: document.getElementById("submitBtn"),
+  inputs: document.querySelectorAll("input[type=range]"),
+  getInputValues: function() {
+    let arr = Array.from(this.inputs).map(inputs => inputs.value);
+    return arr;
+  },
+  addTypeToString: function() {
+    // messageConstructor is from message.js
+    // classifyTriangle is from classify.js
+    return messageConstructor(classifyTriangle(this.getInputValues()));
+  },
 
-  const showAnswer = () => {
-    form.btn.addEventListener("click", addTypeToString);
-  };
-
-  return { showAnswer };
+  showAnswer: function() {
+    this.btn.addEventListener("click", this.addTypeToString.bind(this));
+  }
 };
 
 (function initApplication() {
-  SendTriangle().showAnswer();
+  SendTriangle.showAnswer();
   getRanges();
 })();
