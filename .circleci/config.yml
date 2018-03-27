@@ -43,4 +43,4 @@ jobs:
           name: tests
           command: |
             npm run test:ci
-            ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/codeclimate.json coverage/lcov.info
+            ./cc-test-reporter format-coverage -t lcov -o codeclimate.json coverage/lcov.info
