@@ -42,5 +42,6 @@ jobs:
       - run:
           name: tests
           command: |
+            ./cc-test-reporter before-build
             npm run test:ci
-            ./cc-test-reporter format-coverage -t lcov -o codeclimate.json coverage/lcov.info
+            ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
