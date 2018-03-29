@@ -1,0 +1,95 @@
+body {
+  text-align: left;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 160%;
+  font-weight: 800;
+  text-align: center;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+form {
+  width: 400px;
+  height: 500px;
+  margin: 3em auto;
+  background-color: #fff;
+}
+
+label, select, input {
+  display: block;
+  position: relative;
+  margin: 1.2em 0;
+}
+
+input[type=text] {
+  background-color: #ddd;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 0px;
+  width: 95%;
+  min-height: 2em;
+  font-size: 1em;
+  padding: 0.2em 0.6em;
+}
+
+select {
+  background-color: #ddd;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 0px;
+  width: 100%;
+  min-height: 2.2em;
+  font-size: 1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.2em 0.6em;
+}
+
+.next, .prev, .submit {
+  width: 100%;
+  background-color: #75DDDD;
+  color: #fff;
+  padding: 0.5em;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  float: left;
+}
+
+.next {
+  margin: 0 0 0 0.2em;
+}
+
+.prev, .submit {
+  margin: 0 0.2em 0 0;
+}
+
+.next:hover, .prev:hover {
+  background-color: #9297C4;
+}
+
+.section {
+  /* position: absolute;
+  top: 30%;
+  left: 38%; */
+  width: 400px;
+  float: left;
+  display: block;
+}
+
+.section.active {
+  display: block;
+}
