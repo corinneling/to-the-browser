@@ -1,0 +1,33 @@
+.main {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+}
+
+.results {
+  position: absolute;
+  left: 22%;
+  top: 33%;
+  width: 60%;
+}
+
+a {
+  /* text-align: center; */
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+  font-family:  'Montserrat', sans-serif;
+  font-size: 2em;
+  padding: 0.5em 2em;
+  border-radius: 0.2em;
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  text-align: justify;
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+  font-weight: 900;
+  line-height: 160%;
+  word-wrap: break-word;
+}
