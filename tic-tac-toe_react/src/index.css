@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,800');
+
+
+body {
+    font: 1.2em 'Nunito', sans-serif;
+    margin: 20px;
+  }
+  
+  ol, ul {
+    padding-left: 30px;
+  }
+
+  .main {
+    width: 510px;
+    margin: auto;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .title {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 300;
+  }
+  .status {
+    margin: 0.6em;
+    text-align: center;
+  }
+  
+  .square {
+    background: #eaeaea;
+    color: #333;
+    border: 5px solid #fff;
+    float: left;
+    font-weight: 800;
+    line-height: 2em;
+    height: 2em;
+    width: 2em;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    transition: 0.2s;
+    font: 4.4em 'Nunito', sans-serif;
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+
+  .square:hover {
+    background: #ddd;
+    cursor: pointer;
+  }
+  
+  .kbd-navigation .square:focus {
+    background: #fff;
+  }
+  
+  .game-info {
+    margin-left: 20px;
+  }
+  
