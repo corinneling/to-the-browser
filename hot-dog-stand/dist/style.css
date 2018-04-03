@@ -27,6 +27,22 @@ form {
   background-color: #fff;
 }
 
+.location {
+  font-size: 1.2em;
+  text-align: left; 
+}
+
+.location_lbl {
+  width: 27%;
+  float: left;
+  margin-top: 0.4em;
+}
+
+.location_rdo {
+  width: 6%;
+  float: left;
+}
+
 label, select, input {
   display: block;
   position: relative;
@@ -69,22 +85,7 @@ select {
   float: left;
 }
 
-.next {
-  margin: 0 0 0 0.2em;
-}
-
-.prev, .submit {
-  margin: 0 0.2em 0 0;
-}
-
-.next:hover, .prev:hover {
-  background-color: #9297C4;
-}
-
 .section {
-  /* position: absolute;
-  top: 30%;
-  left: 38%; */
   width: 400px;
   float: left;
   display: block;
