@@ -38,7 +38,7 @@ const CreateForm = function(array, select){
         CreateForm(dy_bun, bun);
         CreateForm(dy_cond, cond);
     } else if ( btn2.checked ){ 
-        // clearForm();
+        clearForm();
         CreateForm(sd_dog, dog);
         CreateForm(sd_bun, bun);
         CreateForm(sd_cond, cond);
