@@ -11,6 +11,12 @@ const form = {
   condiments: document.getElementById('condiments_option'),
 };
 
+const CreateForm = function(){
+  let dog = document.getElementById('frank_option');
+  let bun = document.getElementById('bun_option');
+  let cond = document.getElementById('condiments_option');
+}
+
 const createHotDog = {
   messageConstructor: function(e) {
     e.preventDefault()

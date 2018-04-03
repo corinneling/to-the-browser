@@ -1,0 +1,5 @@
+{
+    "Dayton": [ "Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles" ],
+    "San Diego": ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream"],
+    "New York": ["Ketchup", "Mustard", "Relish"]
+}
