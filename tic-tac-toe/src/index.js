@@ -1,45 +1,25 @@
-var board = document.getElementById("main");
-var tbl = document.createElement("table");
-var tbdy = document.createElement('tbody');
+const loadBoard = require('./board.js');
+loadBoard();
 
-
-let turn = 'X',
-    score = {
-        X: 0,
-        O: 0
-    },
-    play = [];
-
-const loadBoard = function () {
-    tbl.style.width = "500px";
-    tbl.appendChild(tbdy);
-    for (i = 0; i < 3; i++) {
-        for (x = 0; x < 3; x++) {
-            let tr = document.createElement('tr');
-            tr.setAttribute('class', 'square');   
-            tbdy.appendChild(tr);   
-        }
-    }  
-    board.appendChild(tbl);
-}
+let turn = "X";
 
 const Game = function () {
-    document.querySelectorAll('tr').forEach(function (e) {
-        e.addEventListener('click', addGame);
-    });
-}
-
-const addIDs = function() {
     let tr = document.querySelectorAll('tr');
-    for(var j = 0; j < tr.length; j++) {
-        tr[j].setAttribute('id', `${j}`); 
-    } 
+    for (j = 0; j < tr.length; j++) {
+        tr[j].setAttribute('id', `${j}`);
+        tr[j].addEventListener('click', startGame);
+    }
 }
 
-const addGame = function () {
-    let tr = document.querySelectorAll('tr'); 
+const startGame = function (e) {
+    if (e.target && e.target.nodeName == "TR") {
+        let targetElement = document.getElementById(e.target.id);
+        if ((targetElement.className).indexOf("disabled") == -1) {
+            targetElement.innerHTML = turn;
+            targetElement.classList.add('disabled');
+            turn = turn === "X" ? "O" : "X";
+        }
+    }
 }
 
-loadBoard();
 Game();
-addIDs()
