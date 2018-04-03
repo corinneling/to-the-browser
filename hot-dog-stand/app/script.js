@@ -1,19 +1,5 @@
 
-let json = require('./dog.json');
-let { CreateForm } = require('./form.js');
-
-let dog = document.getElementById('frank_option');
-let bun = document.getElementById('bun_option');
-let cond = document.getElementById('condiments_option');
-let dy_dog = json["dog"]["Dayton"];
-let dy_bun = json["bun"]["Dayton"];
-let dy_cond = json["condiment"]["Dayton"];
-// create json files to store the data instead of calling the html
-// render the html with js
-
-CreateForm(dy_dog, dog);
-CreateForm(dy_bun, bun);
-CreateForm(dy_cond, cond);
+let { radioBtns } = require('./form.js');
 
 const form = {
   order: document.forms.orderHotDog,
@@ -22,6 +8,8 @@ const form = {
   bun: document.getElementById('bun_option'),
   condiments: document.getElementById('condiments_option'),
 };
+
+radioBtns();
 
 const createHotDog = {
   messageConstructor: function(e) {
