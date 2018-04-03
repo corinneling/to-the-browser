@@ -5,15 +5,15 @@ let dog = document.getElementById('frank_option'),
     cond = document.getElementById('condiments_option'),
     btn1 = document.getElementById("DY"),
     btn2 = document.getElementById("SD"),
-    dy_dog = json["dog"]["Dayton"],
-    dy_bun = json["bun"]["Dayton"],
-    dy_cond = json["condiment"]["Dayton"],
-    sd_dog = json["dog"]["San Diego"],
-    sd_bun = json["bun"]["San Diego"],
-    sd_cond = json["condiment"]["San Diego"],
-    ny_dog = json["dog"]["New York"],
-    ny_bun = json["bun"]["New York"],
-    ny_cond = json["condiment"]["New York"];
+    dy_dog = json["dog"]["dy"],
+    dy_bun = json["bun"]["dy"],
+    dy_cond = json["condiment"]["dy"],
+    sd_dog = json["dog"]["sd"],
+    sd_bun = json["bun"]["sd"],
+    sd_cond = json["condiment"]["sd"],
+    ny_dog = json["dog"]["ny"],
+    ny_bun = json["bun"]["ny"],
+    ny_cond = json["condiment"]["ny"];
 
 
 const CreateForm = function(array, select){
