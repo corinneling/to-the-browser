@@ -1,5 +1,7 @@
 // const selectedValues = require("./selects.js");
 
+// create json files to store the data instead of calling the html
+// render the html with js
 
 const form = {
   order: document.forms.orderHotDog,
