@@ -4,26 +4,17 @@ let dog = document.getElementById('frank_option'),
     bun = document.getElementById('bun_option'),
     cond = document.getElementById('condiments_option'),
     btn1 = document.getElementById("DY"),
-    btn2 = document.getElementById("SD"),
-    dy_dog = json["dog"]["dy"],
-    dy_bun = json["bun"]["dy"],
-    dy_cond = json["condiment"]["dy"],
-    sd_dog = json["dog"]["sd"],
-    sd_bun = json["bun"]["sd"],
-    sd_cond = json["condiment"]["sd"],
-    ny_dog = json["dog"]["ny"],
-    ny_bun = json["bun"]["ny"],
-    ny_cond = json["condiment"]["ny"];
+    btn2 = document.getElementById("SD");
 
 
 const CreateForm = function(array, select){
-    for( var i = 0; i < array.length; i++) {
-      var option = document.createElement("option");
-      option.value = array[i];
-      option.text = array[i];
-      select.appendChild(option);
+      for( var i = 0; i < array.length; i++ ) {
+        var option = document.createElement("option");
+        option.value = array[i];
+        option.text = array[i];
+        select.appendChild(option);
+      }
     }
-  }
 
   const clearForm = function(){
     dog.options.length = 0;
@@ -34,19 +25,19 @@ const CreateForm = function(array, select){
   const radFunc = function() {
     if ( btn1.checked ) {
         clearForm();
-        CreateForm(dy_dog, dog);
-        CreateForm(dy_bun, bun);
-        CreateForm(dy_cond, cond);
+        CreateForm(json["dog"]["dy"], dog);
+        CreateForm(json["bun"]["dy"], bun);
+        CreateForm(json["condiment"]["dy"], cond);
     } else if ( btn2.checked ){ 
         clearForm();
-        CreateForm(sd_dog, dog);
-        CreateForm(sd_bun, bun);
-        CreateForm(sd_cond, cond);
+        CreateForm(json["dog"]["sd"], dog);
+        CreateForm(json["bun"]["sd"], bun);
+        CreateForm(json["condiment"]["sd"], cond);
     } else { 
         clearForm();
-        CreateForm(ny_dog, dog);
-        CreateForm(ny_bun, bun);
-        CreateForm(ny_cond, cond);
+        CreateForm(json["dog"]["ny"], dog);
+        CreateForm(json["bun"]["ny"], bun);
+        CreateForm(json["condiment"]["ny"], cond);
     } 
   }
 
