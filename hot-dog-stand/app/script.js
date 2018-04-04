@@ -1,35 +1,28 @@
-let {
-  createOptions
-} = require('./form.js');
-
-const form = {
-  order: document.forms.orderHotDog,
-  show: document.getElementById('your_order'),
-  user: document.getElementById('user_name'),
-  dog: document.getElementById('frank_option'),
-  bun: document.getElementById('bun_option'),
-  condiments: []
-};
+let { createOptions } = require('./form.js'),
+    el = require('./elements.json'),
+    show = document.getElementById('your_order');
 
 const createHotDog = {
   getMultiSelect: function () {
     let multiSelect = document.getElementById('condiments_option')
     for (let i = 0; i < multiSelect.selectedOptions.length; i++) {
-      form.condiments.push(multiSelect.selectedOptions[i].value);
+      el["condiments"].push(multiSelect.selectedOptions[i].value);
     }
   },
   messageConstructor: function (e) {
     e.preventDefault()
     this.getMultiSelect();
-    form.show.innerHTML = `
-      customer: ${form.user.value}, <br> 
-      meat: ${form.dog.value}, <br> 
-      bun: ${form.bun.value}, <br> 
-      condiments: ${form.condiments.join(", ")}
-    `;
+    let user_val = eval(el.user);
+    let dog_val = eval(el.dog);
+    let bun_val = eval(el.bun);
+    show.innerHTML = `
+      customer: ${user_val} <br> 
+      meat: ${dog_val} <br> 
+      bun: ${bun_val} <br> 
+      condiments: ${el["condiments"].join(", ")}`;
   },
   showValues: function () {
-    form.order.addEventListener("submit", this.messageConstructor.bind(this));
+    document.forms.orderHotDog.addEventListener("submit", this.messageConstructor.bind(this));
   }
 };
 

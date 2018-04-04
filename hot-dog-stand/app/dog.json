@@ -13,5 +13,10 @@
         "dog":  ["Sushi", "Steak", "Classic"],
         "bun":  ["Whole Wheat", "Everthing Bagel", "None"],
         "cond": ["Ketchup", "Mustard", "Relish"]
-    }
+    },
+    "dog_option": "document.getElementById('frank_option')",
+    "bun_option": "document.getElementById('bun_option')",
+    "cond_option": "document.getElementById('condiments_option')",
+    "dayton": "document.getElementById('DY')",
+    "sandiego": "document.getElementById('SD')"
 }

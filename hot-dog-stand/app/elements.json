@@ -1,0 +1,8 @@
+{
+    "order": "document.forms.orderHotDog",
+    "show": "document.getElementById('your_order').innerHTML",
+    "user": "document.getElementById('user_name').value",
+    "dog": "document.getElementById('frank_option').value",
+    "bun": "document.getElementById('bun_option').value",
+    "condiments": []
+}
