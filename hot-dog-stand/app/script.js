@@ -1,5 +1,6 @@
-
-let { createOptions } = require('./form.js');
+let {
+  createOptions
+} = require('./form.js');
 
 const form = {
   order: document.forms.orderHotDog,
@@ -7,23 +8,19 @@ const form = {
   user: document.getElementById('user_name'),
   dog: document.getElementById('frank_option'),
   bun: document.getElementById('bun_option'),
-  condiments: [],
+  condiments: []
 };
 
-createOptions();
-
-const getMultiSelect = function() {
-  let multiSelect = document.getElementById('condiments_option')
-  for ( var i = 0; i < multiSelect.selectedOptions.length; i++) {
-    let arr = multiSelect.selectedOptions[i].value;
-    form.condiments.push(arr);
-  }
-}
-
 const createHotDog = {
-  messageConstructor: function(e) {
+  getMultiSelect: function () {
+    let multiSelect = document.getElementById('condiments_option')
+    for (let i = 0; i < multiSelect.selectedOptions.length; i++) {
+      form.condiments.push(multiSelect.selectedOptions[i].value);
+    }
+  },
+  messageConstructor: function (e) {
     e.preventDefault()
-    getMultiSelect();
+    this.getMultiSelect();
     form.show.innerHTML = `
       customer: ${form.user.value}, <br> 
       meat: ${form.dog.value}, <br> 
@@ -31,8 +28,10 @@ const createHotDog = {
       condiments: ${form.condiments.join(", ")}
     `;
   },
-  showValues: function() {
+  showValues: function () {
     form.order.addEventListener("submit", this.messageConstructor.bind(this));
   }
 };
+
+createOptions();
 createHotDog.showValues();
