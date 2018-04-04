@@ -1,17 +1,17 @@
 {
-    "dog": {
-        "dy": ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
-        "sd": ["Fish", "Chicken", "Polish", "Beef"],
-        "ny": ["Sushi", "Steak", "Classic"]
+    "dy": {
+        "dog":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
+        "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Rainbow", "None"],
+        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles"]
     },
-    "bun": {
-        "dy": ["Whole Wheat", "Classic", "Waffle", "Omelette", "Rainbow", "None"],
-        "sd": ["Avocado", "Whole Wheat", "None", "Eggplant", "Banana Bread"],
-        "ny": ["Whole Wheat", "Everthing Bagel", "None"]
+    "sd": {
+        "dog":  ["Fish", "Chicken", "Polish", "Beef"], 
+        "bun":  ["Avocado", "Whole Wheat", "None", "Eggplant", "Banana Bread"],
+        "cond": ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream"]
     },
-    "condiment": {
-        "dy": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles"],
-        "sd": ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream"],
-        "ny": ["Ketchup", "Mustard", "Relish"]
+    "ny": {
+        "dog":  ["Sushi", "Steak", "Classic"],
+        "bun":  ["Whole Wheat", "Everthing Bagel", "None"],
+        "cond": ["Ketchup", "Mustard", "Relish"]
     }
 }

@@ -25,23 +25,23 @@ const CreateForm = function(array, select){
   const radFunc = function() {
     if ( btn1.checked ) {
         clearForm();
-        CreateForm(json["dog"]["dy"], dog);
-        CreateForm(json["bun"]["dy"], bun);
-        CreateForm(json["condiment"]["dy"], cond);
+        CreateForm(json["dy"]["dog"], dog);
+        CreateForm(json["dy"]["bun"], bun);
+        CreateForm(json["dy"]["cond"], cond);
     } else if ( btn2.checked ){ 
         clearForm();
-        CreateForm(json["dog"]["sd"], dog);
-        CreateForm(json["bun"]["sd"], bun);
-        CreateForm(json["condiment"]["sd"], cond);
+        CreateForm(json["sd"]["dog"], dog);
+        CreateForm(json["sd"]["bun"], bun);
+        CreateForm(json["sd"]["cond"], cond);
     } else { 
         clearForm();
-        CreateForm(json["dog"]["ny"], dog);
-        CreateForm(json["bun"]["ny"], bun);
-        CreateForm(json["condiment"]["ny"], cond);
+        CreateForm(json["ny"]["dog"], dog);
+        CreateForm(json["ny"]["bun"], bun);
+        CreateForm(json["ny"]["cond"], cond);
     } 
   }
 
-  export const radioBtns = function() {
+  export const createOptions = function() {
     let rad = document.querySelectorAll("input[type='radio']");
     rad.forEach(function(e) {
       e.addEventListener('change', radFunc);

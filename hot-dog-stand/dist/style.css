@@ -1,13 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+
 body {
   text-align: left;
   background-color: #fff;
-  color: #333;
-  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
 }
 
 h1 {
-  font-size: 1.8em;
+  font-size: 1.3em;
   margin-bottom: 0.5em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #444;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.03em;
+}
+
+.page_title {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 0.2em;
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 }
 
 p {
@@ -17,55 +42,113 @@ p {
   text-align: center;
 }
 
+.main {
+  width: 600px;
+  margin: 6em auto;
+}
+
 label {
-  font-size: 1.2em;
+  font-size: 1em;
+  font-weight: 400;
+  color: #444;
+  display: block;
+  position: relative;
+  margin-top: 1em;
+  letter-spacing: 0.03em;
 }
 
 form {
-  width: 400px;
-  height: 500px;
-  margin: 3em auto;
   background-color: #fff;
 }
 
 .location {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: left; 
-  border-bottom: 2px solid #333;
+  margin-top: 2em;
+  letter-spacing: 0.03em;
+  font-size: 400;
+  color: #444;
+  padding-bottom: 0em;
+  margin-bottom: 0.3em;
+}
+
+.create {
+  margin-top: 1em;
 }
 
 .location_lbl {
-  width: 27%;
+  width: 30%;
   float: left;
-  margin-top: 0.4em;
 }
 
 .location_rdo {
-  width: 6%;
+  width: 3%;
   float: left;
 }
 
-label, select, input {
+select, input {
   display: block;
   position: relative;
-  margin: 1.2em 0;
+  margin: 0.4em 0;
 }
 
 input[type=text] {
-  background-color: #ddd;
+  background-color: #eee;
   margin-bottom: 1em;
   border: none;
   border-radius: 0px;
-  width: 95%;
-  min-height: 2em;
+  width: 93%;
+  min-height: 1.7em;
   font-size: 1em;
   padding: 0.2em 0.6em;
+  border-bottom: 3px solid #fff;
+  transition: 0.3s;
+}
+
+input[type=text]:hover {
+  cursor: pointer;
+  border-bottom: 3px solid #ca3f38;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+input[type="radio"] + label span {
+  display:inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin: -0.2em 0.8em 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius:  50%;
+  border-radius:  50%;
+}
+
+input[type="radio"] + label span {
+   background-color: #eee;
+   transition: 0.3s;
+}
+
+input[type="radio"]:hover + label span{
+  background-color: #bbb;
+  transform: scale(1.4);
+}
+
+input[type="radio"]:checked + label span{
+   background-color: #ca3f38;
+   transform: scale(1.4);
 }
 
 select {
-  background-color: #ddd;
+  background-color: #eee;
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 3px solid #fff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   margin-bottom: 1em;
-  border: none;
   border-radius: 0px;
   width: 100%;
   min-height: 2.2em;
@@ -74,25 +157,73 @@ select {
   -moz-appearance: none;
   appearance: none;
   padding: 0.2em 0.6em;
+  transition: 0.3s;
 }
+select:focus, select:hover {
+  cursor: pointer;
+  border-bottom: 3px solid #ca3f38;
+}
+
+ select:focus, input[type=text]:focus, .submit:focus {
+   outline: none;
+ }
+
+ select option, option, option:checked {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+ }
 
 .next, .prev, .submit {
   width: 100%;
-  background-color: #75DDDD;
+  background-color: #ca3f38;
+  font-weight: 300;
+  letter-spacing: 1px;
   color: #fff;
   padding: 0.5em;
   font-size: 1.2em;
   cursor: pointer;
   border: none;
   float: left;
+  transition: 0.3s;
+}
+
+.submit:hover {
+  border-radius: 1em;
+  opacity: 0.8;
 }
 
 .section {
-  width: 400px;
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+.section_third {
+  width: 30%;
   float: left;
   display: block;
 }
 
 .section.active {
   display: block;
+}
+
+.section_third:nth-child(3) {
+  margin-right: 5%;
+}
+
+.section_third:nth-child(4) {
+  margin-right: 4%;
+}
+
+
+.section_third:nth-child(5) {
+  margin-right: 0;
+}
+
+
+#your_order {
+  font-size: 1em;
+  text-align: left;
+  font-weight: 400;
 }

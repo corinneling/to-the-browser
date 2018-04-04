@@ -6,40 +6,48 @@
 </head>
 
 <body>
+  <div class="page_title">
+      <h1>Hot Diggity Dog Stand</h1>
+  </div>
   <div class="main">
     <form id="orderHotDog">
-      <h1>Hot Diggity Dog Stand</h1>
       <div class="section">
-        <p class="location">Select Your Location</p>
-        <input type="radio" class="location_rdo" name="location" value="DY" id="DY" /> <label class="location_lbl" for="DY">Dayton</label>
-        <input type="radio" class="location_rdo" name="location" value="SD" id="SD" /> <label class="location_lbl" for="SD">San Diego</label>
-        <input type="radio" class="location_rdo" name="location" value="NY" id="NY" /> <label class="location_lbl" for="NY">New York</label>
+        <h2>Place An Order</h2>
+        <p class="location">Select Your Location: *</p>
+        <input type="radio" class="location_rdo" name="location" value="DY" id="DY" /> 
+          <label class="location_lbl" for="DY"><span></span>Dayton</label>
+        <input type="radio" class="location_rdo" name="location" value="SD" id="SD" /> 
+          <label class="location_lbl" for="SD"><span></span>San Diego</label>
+        <input type="radio" class="location_rdo" name="location" value="NY" id="NY" /> 
+          <label class="location_lbl" for="NY"><span></span>New York</label>
       </div>
       <div class="section">
-        <label for="user_name">What is your name?</label>
-        <input type="text" id="user_name" placeholder="Name" />
+        <p class="create"></p>
       </div>
-      <div class="section">
-        <label for="frank_option">Select your type of hot dog:</label>
-        <select name="frank_option" id="frank_option">
+      <div class="section_third ">
+        <label for="user_name">Name: *</label>
+        <input type="text" id="user_name" placeholder="Name" required />
+      </div>
+      <div class="section_third">
+        <label for="frank_option">Meat: *</label>
+        <select name="frank_option" id="frank_option" required>
+        </select>
+      </div>
+      <div class="section_third">
+        <label for="bun_option">Bun: *</label>
+        <select name="bun_option" id="bun_option" required>
         </select>
       </div>
       <div class="section">
-        <label for="bun_option">Select the bun for your hot dog:</label>
-        <select name="bun_option" id="bun_option">
+        <label for="condiments_option">Condiments: *</label>
+        <select multiple size="7" name="condiments_option" id="condiments_option" required>
         </select>
-      </div>
-      <div class="section">
-        <label for="condiments_option">Select the condiments for your hot dog:</label>
-        <select multiple size="10" name="condiments_option" id="condiments_option">
-        </select>
-        <input type="submit" class="submit" id="submitBtn" value="submit">
-      </div>
-      <div class="section">
-        <p id="your_order"></p>
+        <input type="submit" class="submit" id="submitBtn" value="Submit Order">
       </div>
     </form>
-
+    <div class="section">
+      <p id="your_order"></p>
+    </div>
   </div>
   <script src="bundle.js"></script>
 </body>
