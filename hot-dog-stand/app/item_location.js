@@ -1,7 +1,7 @@
 let menu = require('./dog.json');
 
 const slc = {
-     dogsFor: function (location) {
+    dogsFor: function (location) {
         if (location == "Dayton") {
             return menu.dy.dog;
         } else if (location == "San Diego") {
@@ -18,16 +18,16 @@ const slc = {
         } else {
             return menu.ny.bun;
         }
+    },
+    condFor: function (location) {
+        if (location == "Dayton") {
+            return menu.dy.cond;
+        } else if (location == "San Diego") {
+            return menu.sd.cond;
+        } else {
+            return menu.ny.cond;
+        }
     }
 }
-// const dogsFor = function (location) {
-//     if (location == "Dayton") {
-//         return menu.dy.dog;
-//     } else if (location == "San Diego") {
-//         return menu.sd.dog;
-//     } else {
-//         return menu.ny.dog;
-//     }
-// }
 
 module.exports = slc;

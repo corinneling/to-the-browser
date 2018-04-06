@@ -1,4 +1,4 @@
-let { createOptions } = require('./form.js'), 
+let { optionsEvent } = require('./form.js'), 
     { disabledEvent } = require('./admin/admin.js'),
     makeSummary = require('./summary.js'),
     el = require('./elements.js');
@@ -21,5 +21,5 @@ const createHotDog = {
 };
 
 disabledEvent();
-createOptions();
+optionsEvent();
 createHotDog.showValues();

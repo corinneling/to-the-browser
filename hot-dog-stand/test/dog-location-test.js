@@ -30,3 +30,18 @@ describe('Buns Location', function(){
     assert.deepStrictEqual(slc.bunsFor(location), ["Avocado", "Whole Wheat", "None", "Eggplant", "Banana Bread", "None"]);
   });
 });
+
+describe('Condiments Location', function(){
+  it('returns json ny.cond if parameter is not dayton or san diego', function(){
+    let location = "New York";
+    assert.deepStrictEqual(slc.condFor(location), ["Ketchup", "Mustard", "Relish", "None"]);
+  });
+  it('returns json dy.cond if parameter is not dayton or san diego', function(){
+    let location = "Dayton";
+    assert.deepStrictEqual(slc.condFor(location), ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"]);
+  });
+  it('returns json sd.cond if parameter is not dayton or san diego', function(){
+    let location = "San Diego";
+    assert.deepStrictEqual(slc.condFor(location), ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream", "None"]);
+  });
+});
