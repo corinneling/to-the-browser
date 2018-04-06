@@ -5,5 +5,5 @@ export const ad = {
     admin_title: document.createTextNode(`Choose bun availability`),
     admin_p: document.createElement("p"),
     admin_text: document.createTextNode(`Selected items will be offered today.`),
-    checks: document.querySelectorAll("input[type='checkbox']")
+    checks: document.querySelectorAll("input[type='checkbox']"),
 }

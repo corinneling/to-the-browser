@@ -1,5 +1,5 @@
 const assert = require('assert');
-const slc = require('../app/item_location.js');
+const slc = require('../app/location_logic.js');
 
 describe('Dogs Location', function(){
   it('returns json ny.dog location if parameter is not dayton or san diego', function(){

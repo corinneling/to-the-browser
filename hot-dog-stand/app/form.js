@@ -1,49 +1,49 @@
-let menu = require('./dog.json'), 
-    slc = require('../app/item_location.js'),
-    el = require('./elements.js'),
-    dog = el.dog,
-    bun = el.bun,
-    cond = el.cond,
-    Dayton = el.dayton;
+let menu = require('./dog.json'),
+  s = require('../app/location_logic.js'),
+  el = require('./elements.js'),
+  item = [s.dogsFor, s.bunsFor, s.condFor];
 
+// create option values for hot dog form
 const hdForm = {
-   createOptions: function (array, select) {
+  // feed json array and selects to append to create options
+  createOptions: function (array, select) {
     for (let i = 0; i < array.length; i++) {
       let option = document.createElement("option");
       option.value = array[i];
       option.text = array[i];
       select.appendChild(option);
     }
+  },
+  // clear options before changing options for diff location
+  clearOptions: function (array) {
+    for (let i = 0; i < array.length; i++) {
+      array[i].options.length = 0;
+    }
+  },
+  // loop through each area and selects so options are added to correct place
+  attachOptions: function (area, item) {
+    for (let i = 0; i < el.selects.length; i++) {
+      this.createOptions(item[i](area), el.selects[i]);
+    }
   }
 }
 
-let sections = [dog, bun, cond];
-
-const clearOptions = function (array) {
-  for(var i = 0; i < array.length; i++) {
-    array[i].options.length = 0;
-  }
-}
-const radioBtnListen = function () {
-  clearOptions(sections);
-  if (Dayton.checked) {
-    hdForm.createOptions(slc.dogsFor("Dayton"), dog);
-    hdForm.createOptions(slc.bunsFor("Dayton"), bun);
-    hdForm.createOptions(slc.condFor("Dayton"), cond);
+// set values for options based on which radio btn location chosen
+const locationChooseValues = function () {
+  hdForm.clearOptions(el.selects);
+  if (el.dayton.checked) {
+    hdForm.attachOptions("Dayton", item);
   } else if (el.sandiego.checked) {
-    hdForm.createOptions(slc.dogsFor("San Diego"), dog);
-    hdForm.createOptions(slc.bunsFor("San Diego"), bun);
-    hdForm.createOptions(slc.condFor("San Diego"), cond);
+    hdForm.attachOptions("San Diego", item);
   } else {
-    hdForm.createOptions(slc.dogsFor("New York"), dog);
-    hdForm.createOptions(slc.bunsFor("New York"), bun);
-    hdForm.createOptions(slc.condFor("New York"), cond);
+    hdForm.attachOptions("New York", item);
   }
 }
 
-export const optionsEvent = function () {
+const optionsEvent = function () {
   el.rad.forEach(function (e) {
-    e.addEventListener('change', radioBtnListen);
+    e.addEventListener('change', locationChooseValues);
   })
 }
 
+module.exports = optionsEvent;

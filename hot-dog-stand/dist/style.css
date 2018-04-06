@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+/* --------------
+      hot
+      dog
+      stand
+----------------- */
+
 body {
   text-align: left;
   background-color: #fff;
@@ -54,43 +61,43 @@ p {
   letter-spacing: 0.03em;
 }
 
-form {
-  width: 50%;
-  background-color: #fff;
-  float: left;
-  padding: 4em;
-}
-
-.chooseLocation {
-  width: 100%;
-  padding: 3em 5em 0em;
-}
-
-.location {
-  font-size: 1em;
-  text-align: left;
-  margin-top: 2em;
-  letter-spacing: 0.03em;
-  font-size: 400;
-  color: #444;
-  padding-bottom: 0em;
-  margin-bottom: 0.3em;
-}
-
 .create {
   margin-top: 1em;
 }
 
-.location_lbl {
-  width: 13%;
-  font-size: 1.2em;
-  margin-top: 1.3em;
+.section {
+  width: 100%;
   float: left;
+  display: block;
 }
 
-.location_rdo {
-  width: 3%;
+.section_third {
+  width: 30%;
   float: left;
+  display: block;
+}
+
+.section_third:nth-child(3) {
+  margin-right: 5%;
+}
+
+.section_third:nth-child(4) {
+  margin-right: 4%;
+}
+
+.section_third:nth-child(5) {
+  margin-right: 0;
+}
+
+/* ----------------------------
+        order hot dog
+---------------------------- */
+
+form {
+  width: 55%;
+  background-color: #fff;
+  float: left;
+  padding: 4em 2em;
 }
 
 select,
@@ -116,36 +123,6 @@ input[type=text] {
 input[type=text]:hover {
   cursor: pointer;
   border-bottom: 3px solid #ca3f38;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-input[type="radio"]+label span {
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  margin: -0.2em 0.8em 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-}
-
-input[type="radio"]+label span {
-  background-color: #e6e6e6;
-  transition: 0.3s;
-}
-
-input[type="radio"]:hover+label span {
-  background-color: #bbb;
-  transform: scale(1.4);
-}
-
-input[type="radio"]:checked+label span {
-  background-color: #ca3f38;
-  transform: scale(1.4);
 }
 
 select {
@@ -181,9 +158,10 @@ input[type=text]:focus,
 
 option:disabled {
   opacity: 0.1;
-  background: #fff;
+  color: #fff;
   text-decoration: line-through;
 }
+
 
 select option,
 option,
@@ -192,8 +170,6 @@ option:checked {
   color: #000;
 }
 
-.next,
-.prev,
 .submit {
   width: 100%;
   background-color: #ca3f38;
@@ -213,34 +189,6 @@ option:checked {
   opacity: 0.8;
 }
 
-.section {
-  width: 100%;
-  float: left;
-  display: block;
-}
-
-.section_third {
-  width: 30%;
-  float: left;
-  display: block;
-}
-
-.section.active {
-  display: block;
-}
-
-.section_third:nth-child(3) {
-  margin-right: 5%;
-}
-
-.section_third:nth-child(4) {
-  margin-right: 4%;
-}
-
-.section_third:nth-child(5) {
-  margin-right: 0;
-}
-
 #your_order {
   width: 57%;
   margin-top: -10em;
@@ -250,39 +198,77 @@ option:checked {
   font-weight: 400;
 }
 
+/* ----------------------------
+          location
+---------------------------- */
+
+.chooseLocation {
+  width: 100%;
+  padding: 3em 5em 0em;
+}
+
+.location {
+  font-size: 1em;
+  text-align: left;
+  margin-top: 2em;
+  letter-spacing: 0.03em;
+  font-size: 400;
+  color: #444;
+  padding-bottom: 0em;
+  margin-bottom: 0.3em;
+}
+
 .location_title {
   width: 22%;
   float: left;
 }
 
-@media only screen and (max-width: 630px) {
-  .main {
-    width: 80%;
-    margin: 4em auto;
-  }
-  .section_third {
-    width: 100%;
-    float: left;
-  }
-  .section_third:nth-child(3) {
-    margin-right: 0;
-  }
-  .section_third:nth-child(4) {
-    margin-right: 0;
-  }
-  input[type=text] {
-    width: 96%;
-  }
+input[type="radio"]+label span {
+  background-color: #e6e6e6;
+  transition: 0.3s;
 }
 
-@media only screen and (max-width: 450px) {
-  .location_lbl {
-    width: 90%;
-    float: left;
-  }
+input[type="radio"]:hover+label span {
+  background-color: #bbb;
+  transform: scale(1.4);
 }
 
-/* admin form */
+input[type="radio"]:checked+label span,
+input[type="radio"]:focus+label span {
+  background-color: #ca3f38;
+  transform: scale(1.4);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+input[type="radio"]+label span {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin: -0.2em 0.8em 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.location_lbl {
+  width: 13%;
+  font-size: 1.2em;
+  margin-top: 1.3em;
+  float: left;
+}
+
+.location_rdo {
+  width: 3%;
+  float: left;
+}
+
+/* ----------------------------
+            admin
+---------------------------- */
 
 #admin {
   width: 25%;
@@ -333,3 +319,82 @@ option:checked {
   width: 25px;
   background-color: #eee;
 }
+
+/* ----------------------------
+          media queries
+---------------------------- */
+
+@media only screen and (max-width: 1290px) {
+  #admin {
+    width: 25%;
+    padding: 3em 4em 3em 6em;
+  }
+  form {
+    width: 55%;
+    padding: 4em 1em;
+  }
+  #admin label {
+    margin-right: 0.8em;
+  }
+  #admin h4 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .location_title {
+    width: 26%;
+  }
+}
+
+@media only screen and (max-width: 975px) {
+  #admin {
+    width: 25%;
+    padding: 3em 3em 3em 5em;
+  }
+  #admin p {
+    font-size: 0.9em;
+  }
+  .location_lbl {
+    width: 13%;
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .main {
+    width: 80%;
+    margin: 4em auto;
+  }
+  .section_third {
+    width: 100%;
+    float: left;
+  }
+  .section_third:nth-child(3) {
+    margin-right: 0;
+  }
+  .section_third:nth-child(4) {
+    margin-right: 0;
+  }
+  input[type=text] {
+    width: 96%;
+  }
+  #admin {
+    width: 100%;
+    padding: 2em 2em 0;
+  }
+  form {
+    width: 100%;
+    padding: 0 2em 2em;
+  }
+  .location_lbl,
+  .location_title {
+    width: 90%;
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 450px) {}
