@@ -1,6 +1,6 @@
 const makeSummary = function (summary) {
-    let [meat, bun, condiments] = summary;
-    let order = `Order: ${meat} dog, ${bun} bun, and ${condiments}.`;
+    let [user, meat, bun, condiments] = summary;
+    let order = `Order: Costumer: ${user}, Dog: ${meat}, Bun: ${bun}, Condiments: ${condiments}.`;
     return order;
 }
 
