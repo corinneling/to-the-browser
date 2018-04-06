@@ -1,4 +1,4 @@
-let menu = require('./dog.json'),
+let menu = require('./dog.json'), 
     { el } = require('./elements.js'),
     e_dog = el.dog,
     e_bun = el.bun,
@@ -43,3 +43,5 @@ export const createOptions = function () {
     e.addEventListener('change', radFunc);
   })
 }
+
+// module.exports = makeSummary;
