@@ -1,22 +1,17 @@
 {
     "dy": {
         "dog":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
-        "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Rainbow", "None"],
-        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles"]
+        "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Cotton Candy", "None"],
+        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"]
     },
     "sd": {
         "dog":  ["Fish", "Chicken", "Polish", "Beef"], 
-        "bun":  ["Avocado", "Whole Wheat", "None", "Eggplant", "Banana Bread"],
-        "cond": ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream"]
+        "bun":  ["Avocado", "Whole Wheat", "None", "Eggplant", "Banana Bread", "None"],
+        "cond": ["Cotton Candy", "Ketchup", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream", "None"]
     },
     "ny": {
         "dog":  ["Sushi", "Steak", "Classic"],
         "bun":  ["Whole Wheat", "Everthing Bagel", "None"],
-        "cond": ["Ketchup", "Mustard", "Relish"]
-    },
-    "dog_option": "document.getElementById('frank_option')",
-    "bun_option": "document.getElementById('bun_option')",
-    "cond_option": "document.getElementById('condiments_option')",
-    "dayton": "document.getElementById('DY')",
-    "sandiego": "document.getElementById('SD')"
+        "cond": ["Ketchup", "Mustard", "Relish", "None"]
+    }
 }

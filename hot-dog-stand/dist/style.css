@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
-
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 body {
   text-align: left;
   background-color: #fff;
@@ -19,7 +17,7 @@ h1 {
 
 h2 {
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0.5em;
   letter-spacing: 0.03em;
 }
@@ -33,7 +31,6 @@ h2 {
   position: fixed;
   top: 0;
   width: 100%;
-
 }
 
 p {
@@ -44,11 +41,10 @@ p {
 }
 
 .main {
-  width: 600px;
-  margin: 6em auto;
+  margin: 4em auto;
 }
 
-label {
+#orderHotDog label {
   font-size: 1em;
   font-weight: 400;
   color: #444;
@@ -59,12 +55,20 @@ label {
 }
 
 form {
+  width: 50%;
   background-color: #fff;
+  float: left;
+  padding: 4em;
+}
+
+.chooseLocation {
+  width: 100%;
+  padding: 3em 5em 0em;
 }
 
 .location {
   font-size: 1em;
-  text-align: left; 
+  text-align: left;
   margin-top: 2em;
   letter-spacing: 0.03em;
   font-size: 400;
@@ -78,7 +82,9 @@ form {
 }
 
 .location_lbl {
-  width: 30%;
+  width: 13%;
+  font-size: 1.2em;
+  margin-top: 1.3em;
   float: left;
 }
 
@@ -87,14 +93,15 @@ form {
   float: left;
 }
 
-select, input {
+select,
+input {
   display: block;
   position: relative;
   margin: 0.4em 0;
 }
 
 input[type=text] {
-  background-color: #eee;
+  background-color: #e6e6e6;
   margin-bottom: 1em;
   border: none;
   border-radius: 0px;
@@ -112,38 +119,38 @@ input[type=text]:hover {
 }
 
 input[type="radio"] {
-  display:none;
+  display: none;
 }
 
-input[type="radio"] + label span {
-  display:inline-block;
+input[type="radio"]+label span {
+  display: inline-block;
   width: 1.2em;
   height: 1.2em;
   margin: -0.2em 0.8em 0 0;
   vertical-align: middle;
   cursor: pointer;
-  -moz-border-radius:  50%;
-  border-radius:  50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
-input[type="radio"] + label span {
-   background-color: #eee;
-   transition: 0.3s;
+input[type="radio"]+label span {
+  background-color: #e6e6e6;
+  transition: 0.3s;
 }
 
-input[type="radio"]:hover + label span{
+input[type="radio"]:hover+label span {
   background-color: #bbb;
   transform: scale(1.4);
 }
 
-input[type="radio"]:checked + label span{
-   background-color: #ca3f38;
-   transform: scale(1.4);
+input[type="radio"]:checked+label span {
+  background-color: #ca3f38;
+  transform: scale(1.4);
 }
 
 select {
-  background-color: #eee;
-  color: #555;
+  background-color: #e6e6e6;
+  color: #000;
   font-family: 'Roboto', sans-serif;
   border-bottom: 3px solid #fff;
   border-top: none;
@@ -156,25 +163,38 @@ select {
   font-size: 1em;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   padding: 0.2em 0.6em;
   transition: 0.3s;
 }
-select:focus, select:hover {
+
+select:focus,
+select:hover {
   cursor: pointer;
   border-bottom: 3px solid #ca3f38;
 }
 
- select:focus, input[type=text]:focus, .submit:focus {
-   outline: none;
- }
+select:focus,
+input[type=text]:focus,
+.submit:focus {
+  outline: none;
+}
 
- select option, option, option:checked {
+option:disabled {
+  opacity: 0.1;
+  background: #fff;
+  text-decoration: line-through;
+}
+
+select option,
+option,
+option:checked {
   font-family: 'Roboto', sans-serif;
-  color: #555;
- }
+  color: #000;
+}
 
-.next, .prev, .submit {
+.next,
+.prev,
+.submit {
   width: 100%;
   background-color: #ca3f38;
   font-weight: 300;
@@ -217,14 +237,99 @@ select:focus, select:hover {
   margin-right: 4%;
 }
 
-
 .section_third:nth-child(5) {
   margin-right: 0;
 }
 
-
 #your_order {
+  width: 57%;
+  margin-top: -10em;
+  font-size: 1em;
+  text-align: left;
+  float: right;
+  font-weight: 400;
+}
+
+.location_title {
+  width: 22%;
+  float: left;
+}
+
+@media only screen and (max-width: 630px) {
+  .main {
+    width: 80%;
+    margin: 4em auto;
+  }
+  .section_third {
+    width: 100%;
+    float: left;
+  }
+  .section_third:nth-child(3) {
+    margin-right: 0;
+  }
+  .section_third:nth-child(4) {
+    margin-right: 0;
+  }
+  input[type=text] {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .location_lbl {
+    width: 90%;
+    float: left;
+  }
+}
+
+/* admin form */
+
+#admin {
+  width: 25%;
+  height: 600px;
+  padding: 3em 6em;
+}
+
+#admin label {
+  float: left;
+  width: 95%;
+  background-color: #f1f1f1;
+  padding: 1em;
+  display: block;
+  margin-right: 1.1em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  margin-top: 0.1em;
+}
+
+#admin label:hover {
+  background-color: #eaeaea;
+}
+
+#admin h4 {
+  font-size: 1.6em;
+  margin-bottom: 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+#admin p {
   font-size: 1em;
   text-align: left;
   font-weight: 400;
+}
+
+#admin input[type="checkbox"] {
+  float: left;
+  margin-right: 1em;
+  background-color: #000;
+}
+
+#admin span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
 }

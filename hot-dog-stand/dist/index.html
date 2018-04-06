@@ -9,17 +9,21 @@
   <div class="page_title">
       <h1>Hot Diggity Dog Stand</h1>
   </div>
+  <form class="chooseLocation">
+      <h2 class="location_title">Select Your Location: *</h2>
+
+      <input type="radio" class="location_rdo" name="location" value="SD" id="SD" /> 
+        <label class="location_lbl" for="SD"><span></span>San Diego</label>
+      <input type="radio" class="location_rdo" name="location" value="NY" id="NY" /> 
+        <label class="location_lbl" for="NY"><span></span>New York</label>
+      <input type="radio" class="location_rdo" name="location" value="DY" id="DY" /> 
+        <label class="location_lbl" for="DY"><span></span>Dayton</label>
+  </form>
+  <div class="container">
   <div class="main">
     <form id="orderHotDog">
       <div class="section">
         <h2>Place An Order</h2>
-        <p class="location">Select Your Location: *</p>
-        <input type="radio" class="location_rdo" name="location" value="DY" id="DY" /> 
-          <label class="location_lbl" for="DY"><span></span>Dayton</label>
-        <input type="radio" class="location_rdo" name="location" value="SD" id="SD" /> 
-          <label class="location_lbl" for="SD"><span></span>San Diego</label>
-        <input type="radio" class="location_rdo" name="location" value="NY" id="NY" /> 
-          <label class="location_lbl" for="NY"><span></span>New York</label>
       </div>
       <div class="section">
         <p class="create"></p>
@@ -49,6 +53,7 @@
       <p id="your_order"></p>
     </div>
   </div>
+</div>
   <script src="bundle.js"></script>
 </body>
 

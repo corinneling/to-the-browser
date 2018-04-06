@@ -1,15 +1,12 @@
-let menu = require('./dog.json');
-
-let dog = document.getElementById('frank_option'),
-    bun = document.getElementById('bun_option'),
-    cond = document.getElementById('condiments_option'),
-    dayton = document.getElementById("DY"),
-    sandiego = document.getElementById("SD");
-
+let menu = require('./dog.json'),
+    { el } = require('./elements.js'),
+    e_dog = el.dog,
+    e_bun = el.bun,
+    e_cond = el.cond;
 
 const CreateForm = function (array, select) {
-  for (var i = 0; i < array.length; i++) {
-    var option = document.createElement("option");
+  for (let i = 0; i < array.length; i++) {
+    let option = document.createElement("option");
     option.value = array[i];
     option.text = array[i];
     select.appendChild(option);
@@ -17,33 +14,32 @@ const CreateForm = function (array, select) {
 }
 
 const clearForm = function () {
-  dog.options.length = 0;
-  bun.options.length = 0;
-  cond.options.length = 0;
+  e_dog.options.length = 0;
+  e_bun.options.length = 0;
+  e_cond.options.length = 0;
 }
 
 const radFunc = function () {
-  if (dayton.checked) {
+  if (el.dayton.checked) {
     clearForm();
-    CreateForm(menu.dy.dog, dog);
-    CreateForm(menu.dy.bun, bun);
-    CreateForm(menu.dy.cond, cond);
-  } else if (sandiego.checked) {
+    CreateForm(menu.dy.dog, e_dog);
+    CreateForm(menu.dy.bun, e_bun);
+    CreateForm(menu.dy.cond, e_cond);
+  } else if (el.sandiego.checked) {
     clearForm();
-    CreateForm(menu.sd.dog, dog);
-    CreateForm(menu.sd.bun, bun);
-    CreateForm(menu.sd.cond, cond);
+    CreateForm(menu.sd.dog, e_dog);
+    CreateForm(menu.sd.bun, e_bun);
+    CreateForm(menu.sd.cond, e_cond);
   } else {
     clearForm();
-    CreateForm(menu.ny.dog, dog);
-    CreateForm(menu.ny.bun, bun);
-    CreateForm(menu.ny.cond, cond);
+    CreateForm(menu.ny.dog, e_dog);
+    CreateForm(menu.ny.bun, e_bun);
+    CreateForm(menu.ny.cond, e_cond);
   }
 }
 
 export const createOptions = function () {
-  let rad = document.querySelectorAll("input[type='radio']");
-  rad.forEach(function (e) {
+  el.rad.forEach(function (e) {
     e.addEventListener('change', radFunc);
   })
 }
