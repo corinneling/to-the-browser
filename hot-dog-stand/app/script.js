@@ -1,7 +1,7 @@
-let { createOptions } = require('./form.js'),
+let { createOptions } = require('./form.js'), 
     { disabledEvent } = require('./admin/admin.js'),
     makeSummary = require('./summary.js'),
-    { el } = require('./elements.js');
+    el = require('./elements.js');
 
 const createHotDog = {
   getMultiSelect: function () {
@@ -12,17 +12,14 @@ const createHotDog = {
   messageConstructor: function (e) {
     e.preventDefault()
     this.getMultiSelect();
-    let summary_array = [el.user.value, el.dog.value, el.bun.value, el.condiments ];
-    document.getElementById('your_order').innerHTML = `${makeSummary(summary_array)}`;
+    let summary = [el.user.value, el.dog.value, el.bun.value, el.condiments];
+    el.show.innerHTML = `${makeSummary(summary)}`;
   },
   showValues: function () {
     el.hotdogform.addEventListener("submit", this.messageConstructor.bind(this));
   }
 };
 
-const getCondiments = function(toppings) {
-
-}
 disabledEvent();
 createOptions();
 createHotDog.showValues();

@@ -1,5 +1,5 @@
 let { createAdminForm } = require('./admin_form.js'), 
-    { el } = require('../elements.js'), 
+    el = require('../elements.js'), 
     { ad } = require('./admin_elements.js'),
     menu = require('../dog.json'),
     adminform = document.getElementById('admin'),
