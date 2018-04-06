@@ -1,8 +1,7 @@
 let { createOptions } = require('./form.js'),
     { disabledEvent } = require('./admin/admin.js'),
     makeSummary = require('./summary.js'),
-    { el } = require('./elements.js'),
-    summary_array = ["Bob", "polish", "wheat", ["ketchup", "mustard"] ];
+    { el } = require('./elements.js');
 
 const createHotDog = {
   getMultiSelect: function () {
@@ -13,6 +12,7 @@ const createHotDog = {
   messageConstructor: function (e) {
     e.preventDefault()
     this.getMultiSelect();
+    let summary_array = [el.user.value, el.dog.value, el.bun.value, el.condiments ];
     document.getElementById('your_order').innerHTML = `${makeSummary(summary_array)}`;
   },
   showValues: function () {
