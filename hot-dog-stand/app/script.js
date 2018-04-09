@@ -1,7 +1,8 @@
-let options = require('../order/render_options.js'),
-  // listBunsEvent = require('./admin/admin.js'),
-  showOrder = require('../order/show_order.js'),
-  el = require('../order/elements.js');
+let options = require('./order/render_options.js'),
+  disable = require('./admin/admin.js'),
+  checkboxes = require('./admin/render_checkboxes.js'),
+  showOrder = require('./order/show_order.js'),
+  el = require('./order/elements.js');
 
 const createOrder = {
   // put selected condiments into an array
@@ -26,10 +27,12 @@ const createOrder = {
 /* -- Start Hot Dog Stand -- */
 
 (function startApp() {
+  // render checkboxes for admin controls
+    checkboxes();
   // admin control over bun options
-  // listBunsEvent();
+    disable();
   // attached options to selects based on location
-  options();
+    options();
   // call form event listener 
-  createOrder.formSumbit();
+    createOrder.formSumbit();
 })();

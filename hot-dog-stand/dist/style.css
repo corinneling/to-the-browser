@@ -280,23 +280,6 @@ input[type="radio"]+label span {
   padding: 3em 6em;
 }
 
-#admin label {
-  float: left;
-  width: 95%;
-  background-color: #f1f1f1;
-  padding: 1em;
-  display: block;
-  margin-right: 1.1em;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1em;
-  margin-top: 0.1em;
-}
-
-#admin label:hover {
-  background-color: #eaeaea;
-}
-
-
 #admin h4 {
   font-size: 1.6em;
   margin-bottom: 0;
@@ -310,9 +293,19 @@ input[type="radio"]+label span {
   font-weight: 400;
 }
 
+#admin label {
+  float: left;
+  width: 85%;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  margin-top: 0.1em;
+}
+
 #admin input[type="checkbox"] {
   float: left;
-  margin-right: 1em;
+  width: 10%;
+  margin-right: 0.5em;
   background-color: #000;
 }
 
@@ -401,5 +394,3 @@ input[type="radio"]+label span {
     float: left;
   }
 }
-
-@media only screen and (max-width: 450px) {}

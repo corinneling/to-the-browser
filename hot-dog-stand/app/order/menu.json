@@ -1,0 +1,17 @@
+{
+    "dy": {
+        "dog":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
+        "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Lettuce", "Cotton Candy", "None"],
+        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"]
+    },
+    "sd": {
+        "dog":  ["Fish", "Chicken", "Polish", "Beef"], 
+        "bun":  ["Avocado", "Whole Wheat", "Eggplant", "Banana Bread", "Lettuce", "None"],
+        "cond": ["Cotton Candy", "Ketchup", "Onion", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream", "None"]
+    },
+    "ny": {
+        "dog":  ["Sushi", "Steak", "Classic", "Polish"],
+        "bun":  ["Plain", "Whole Wheat", "Everthing Bagel", "Lettuce", "None"],
+        "cond": ["Ketchup", "Mustard", "Relish", "Saurkraut", "Onion", "Chips", "None"]
+    }
+}

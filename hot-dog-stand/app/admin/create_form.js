@@ -18,13 +18,11 @@ const createCheckboxes = function (array) {
         let boxes = document.createElement("input");
         let labels = document.createElement("label");
         let spans = document.createElement("span");
-        // boxes.type = "checkbox";
-        // boxes.value = array[i];
-        // boxes.name = array[i];
+        boxes.type = "checkbox";
+        boxes.setAttribute('id', `${i}`);
+        labels.setAttribute('for', `${i}`);
+        ad.admin_form.appendChild(boxes);
         ad.admin_form.appendChild(labels);
-        labels.appendChild(spans);
-        // labels.appendChild(document.createTextNode(array[i]));
-        // labels.appendChild(boxes);
     }
 }
 
