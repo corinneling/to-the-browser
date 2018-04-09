@@ -3,27 +3,33 @@ For admin functionality
 When a bun type is checked in admin form
 Then disabled is added to that bun type in order form
 */
-let createForm = require('./create_form.js'),
+
+const createForm = require('./create_form.js'),
+    ad = require('./admin_elements.js'),
     menu = require('../order/menu.json');
 
-const disabledEvent = function () {
-    createForm(menu.dy.bun);
-    let checks = document.querySelectorAll("input[type='checkbox']");
-    checks.forEach(function (e) {
-        e.addEventListener('change', addDisable);
-    })
-}
+let adminBunList = null,
+    orderBunList = null;
 
-const addDisable = function () {
-    let buns = document.getElementById('bun_option').options;
-    let checks = document.querySelectorAll("input[type='checkbox']");
-    for (var i = 0; i < buns.length; i++) {
-        if (checks[i].checked) {
-            buns[i].removeAttribute('disabled');
-        } else if (checks[i].checked == false) {
-            buns[i].setAttribute('disabled', true);
+// listens for bun list checkboxes to change
+const disable = function () {
+    createForm(menu.dy.bun);
+    adminBunList = document.querySelectorAll("input[type='checkbox']");
+    adminBunList.forEach(function (e) {
+        e.addEventListener('change', removeDisable);
+    })
+};
+
+// removes disabled from order form bun list option when reflecting checkbox is checked
+const removeDisable = function () {
+    orderBunList = document.getElementById('bun_option').options;
+    for (var i = 0; i < adminBunList.length; i++) {
+        if (adminBunList[i].checked) {
+            orderBunList[i].removeAttribute('disabled');
+        } else if (adminBunList[i].checked == false) {
+            orderBunList[i].setAttribute('disabled', true);
         }
     }
-}
+};
 
-module.exports = disabledEvent;
+module.exports = disable;
