@@ -17,12 +17,13 @@ const createCheckboxes = function (array) {
     for (let i = 0; i < array.length; i++) {
         let boxes = document.createElement("input");
         let labels = document.createElement("label");
-        let spans = document.createElement("span");
+        let divs = document.createElement("div");
         boxes.type = "checkbox";
         boxes.setAttribute('id', `${i}`);
         labels.setAttribute('for', `${i}`);
-        ad.admin_form.appendChild(boxes);
-        ad.admin_form.appendChild(labels);
+        ad.admin_form.appendChild(divs);
+        divs.appendChild(boxes);
+        divs.appendChild(labels);
     }
 }
 

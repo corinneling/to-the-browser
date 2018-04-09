@@ -1,6 +1,6 @@
-let createForm = require('./create_form.js'), 
+let createForm = require('./create_form.js'),
     menu = require('../order/menu.json');
-    
+
 const disabledEvent = function () {
     createForm(menu.dy.bun);
     let checks = document.querySelectorAll("input[type='checkbox']");

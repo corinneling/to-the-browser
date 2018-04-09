@@ -194,12 +194,22 @@ select:-internal-list-box option:checked {
 }
 
 #your_order {
-  width: 57%;
-  margin-top: -10em;
+  width: 86%;
+  min-height: 4em;
+  z-index: 10;
+  background-color: #fff;
+  margin: -5em auto 2em;
+  padding: 2em;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  text-align: center;
   font-size: 1em;
+  line-height: 180%;
   text-align: left;
-  float: right;
   font-weight: 400;
+}
+
+.order_section {
+  background-color: #ab2929;
 }
 
 /* ----------------------------
@@ -277,7 +287,7 @@ input[type="radio"]+label span {
 #admin {
   width: 25%;
   height: 600px;
-  padding: 3em 6em;
+  padding: 3em 6em 3em 4em;
 }
 
 #admin h4 {
@@ -293,12 +303,19 @@ input[type="radio"]+label span {
   font-weight: 400;
 }
 
+#admin div {
+  width: 100%;
+  padding: 1em 1em 2.2em;
+  background-color: #eee;
+  border-bottom: 2px solid #fff;
+}
+
 #admin label {
   float: left;
   width: 85%;
   display: block;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.1em;
+  font-size: 1em;
   margin-top: 0.1em;
 }
 

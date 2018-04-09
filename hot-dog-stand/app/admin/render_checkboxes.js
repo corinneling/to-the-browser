@@ -1,7 +1,7 @@
 let el = require('../order/elements.js'),
     ad = require('./admin_elements.js'),
     lol = require('../order/location_logic.js'),
-    createForm = require('./create_form.js'), 
+    createForm = require('./create_form.js'),
     menu = require('../order/menu.json');
 
 // feed json array and selects to append to create options
@@ -18,10 +18,9 @@ const createCheckBoxes = function (array) {
 const clearCheckBoxes = function () {
     let labels = document.querySelectorAll("#admin label");
     for (let i = 0; i < labels.length; i++) {
-        console.log(labels[i].innerHTML)
         labels[i].innerHTML = "";
     }
-  }
+}
 
 // display checkbox values based on area
 const locationCheckValues = function () {
