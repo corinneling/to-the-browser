@@ -1,3 +1,8 @@
+/* 
+For admin functionality
+When a bun type is checked in admin form
+Then disabled is added to that bun type in order form
+*/
 let createForm = require('./create_form.js'),
     menu = require('../order/menu.json');
 

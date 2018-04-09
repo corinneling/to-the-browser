@@ -1,3 +1,7 @@
+/* 
+For order functionality
+stores dom elements to create and manipulate form 
+*/
 const el = {
     show: document.getElementById('your_order'),
     user: document.getElementById('user_name'),

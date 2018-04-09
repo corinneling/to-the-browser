@@ -1,3 +1,8 @@
+/* 
+Start of App
+When the page is loaded
+Then admin, form rendering, and order form listener scripts are run
+*/
 let options = require('./order/render_options.js'),
   disable = require('./admin/admin.js'),
   checkboxes = require('./admin/render_checkboxes.js'),

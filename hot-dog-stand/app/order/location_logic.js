@@ -1,3 +1,8 @@
+/* 
+For location functionality
+When location string is passed
+Then a json array is returned
+*/
 let menu = require('./menu.json');
 
 const locationLogic = {

@@ -1,8 +1,11 @@
+/* 
+For admin functionality
+When a location is selected
+Then renders the checkbox's label text for that location 
+*/
 let el = require('../order/elements.js'),
     ad = require('./admin_elements.js'),
-    lol = require('../order/location_logic.js'),
-    createForm = require('./create_form.js'),
-    menu = require('../order/menu.json');
+    lol = require('../order/location_logic.js');
 
 // feed json array and selects to append to create options
 const createCheckBoxes = function (array) {

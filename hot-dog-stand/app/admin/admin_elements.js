@@ -1,3 +1,7 @@
+/* 
+For admin functionality
+stores dom elements to create and manipulate form 
+*/
 const ad = {
     admin_form: document.createElement("form"),
     contain: document.querySelector('.container'),
@@ -6,6 +10,7 @@ const ad = {
     admin_p: document.createElement("p"),
     admin_text: document.createTextNode(`Selected items will be offered today.`),
     checks: document.querySelectorAll("input[type='checkbox']"),
+    order: document.getElementById("orderHotDog")
 }
 
 module.exports = ad;

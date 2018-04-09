@@ -1,3 +1,8 @@
+/* 
+For order functionality
+When a location is selected
+Then renders select's options for that location 
+*/
 let menu = require('./menu.json'),
     lol = require('./location_logic.js'),
     el = require('./elements.js'),
