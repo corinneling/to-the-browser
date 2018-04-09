@@ -115,7 +115,7 @@ input[type=text] {
   width: 93%;
   min-height: 1.7em;
   font-size: 1em;
-  padding: 0.2em 0.6em;
+  padding: 0.35em 0.6em;
   border-bottom: 3px solid #fff;
   transition: 0.3s;
 }
@@ -140,7 +140,7 @@ select {
   font-size: 1em;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 0.2em 0.6em;
+  padding: 0.6em;
   transition: 0.3s;
 }
 
@@ -162,12 +162,16 @@ option:disabled {
   text-decoration: line-through;
 }
 
-
 select option,
 option,
 option:checked {
   font-family: 'Roboto', sans-serif;
   color: #000;
+}
+
+select:-internal-list-box option:checked {
+  background-color: #666 !important;
+  color: #fff !important;
 }
 
 .submit {
@@ -204,7 +208,7 @@ option:checked {
 
 .chooseLocation {
   width: 100%;
-  padding: 3em 5em 0em;
+  padding: 3em 4em 0em;
 }
 
 .location {
@@ -284,13 +288,14 @@ input[type="radio"]+label span {
   display: block;
   margin-right: 1.1em;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-top: 0.1em;
 }
 
 #admin label:hover {
   background-color: #eaeaea;
 }
+
 
 #admin h4 {
   font-size: 1.6em;
@@ -327,7 +332,7 @@ input[type="radio"]+label span {
 @media only screen and (max-width: 1290px) {
   #admin {
     width: 25%;
-    padding: 3em 4em 3em 6em;
+    padding: 3em 8em 3em 4em;
   }
   form {
     width: 55%;

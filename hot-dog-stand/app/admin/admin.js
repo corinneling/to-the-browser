@@ -1,13 +1,11 @@
-let { createAdminForm } = require('./admin_form.js'), 
+let createForm = require('./admin_form.js'), 
     el = require('../elements.js'), 
-    { ad } = require('./admin_elements.js'),
-    menu = require('../dog.json'),
-    adminform = document.getElementById('admin'),
-    e_bun = el.bun;
+    ad = require('./admin_elements.js'),
+    lol = require('../location_logic.js'),
+    menu = require('../menu.json');
 
 export const disabledEvent = function () {
     console.log('hi');
-    createAdminForm(menu.dy.bun);
     let checks = document.querySelectorAll("input[type='checkbox']");
     checks.forEach(function (e) {
         e.addEventListener('change', addDisable);
@@ -26,35 +24,51 @@ const addDisable = function () {
     }
 }
 
-// conflict with the disabled functionality
-const removeBunOptions = function () {
-    let labels = document.querySelectorAll("#admin label");
-    if(labels.lenght < 0) {
-        for (var i = 0; i < labels.length; i++) {
-            labels[i].remove();
-        } 
+const show = {
+    // feed json array and selects to append to create options
+    createCheckBoxes: function (array, select) {
+      for (let i = 0; i < array.length; i++) {
+        let input = document.createElement("input");
+        let labels = document.querySelectorAll("#admin label");
+        input.type = "checkbox";
+        input.value = array[i];
+        labels.appendChild(document.createTextNode(array[i]));
+        labels.appendChild(input);
+      }
+    },
+    // clear options before changing options for diff location
+    clearCheckBoxes: function (array) {
+      for (let i = 0; i < array.length; i++) {
+        array[i].options.length = 0;
+      }
+    },
+    // loop through each area and selects so options are added to correct place
+    attachCheckBoxes: function (area) {
+      for (let i = 0; i < el.selects.length; i++) {
+        this.createCheckBoxes(lol.bunsFor(area), el.selects[i]);
+      }
     }
-}
+  }
 
-const showCorrectAdminBuns = function () {
+  const locationCheckValues = function () {
+    show.clearCheckBoxes(el.selects);
     if (el.dayton.checked) {
-        removeBunOptions();
-        createAdminForm(menu.dy.bun);
-        disabledEvent();
+        show.attachOptions("Dayton");
     } else if (el.sandiego.checked) {
-        removeBunOptions();
-        createAdminForm(menu.sd.bun);
-        disabledEvent();
+        show.attachOptions("San Diego");
     } else {
-        removeBunOptions();
-        createAdminForm(menu.ny.bun);
-        disabledEvent();
+        show.attachOptions("New York");
     }
-}
+  }
 
-export const listBunsEvent = function () {
+const listBunsEvent = function () {
     let radios = document.querySelectorAll("input[type='radio']")
     radios.forEach(function (e) {
-        e.addEventListener('change', showCorrectAdminBuns);
+        e.addEventListener('change', locationCheckValues);
     })
 }
+
+createForm(menu.dy.bun);
+
+
+module.exports = listBunsEvent;

@@ -1,6 +1,6 @@
-let { ad } = require('./admin_elements.js');
+let ad = require('./admin_elements.js');
 
-export const createAdminForm = function (array) {
+const createAdminForm = function (array) {
     ad.admin_form.setAttribute('id', 'admin');
     let order = document.getElementById("orderHotDog");
     let parentDiv = order.parentNode;
@@ -18,12 +18,14 @@ const createCheckboxes = function (array) {
         let boxes = document.createElement("input");
         let labels = document.createElement("label");
         let spans = document.createElement("span");
-        boxes.type = "checkbox";
-        boxes.value = array[i];
-        boxes.name = array[i];
-        labels.htmlFor = array[i];
+        // boxes.type = "checkbox";
+        // boxes.value = array[i];
+        // boxes.name = array[i];
         ad.admin_form.appendChild(labels);
-        labels.appendChild(document.createTextNode(array[i]));
-        labels.appendChild(boxes);
+        labels.appendChild(spans);
+        // labels.appendChild(document.createTextNode(array[i]));
+        // labels.appendChild(boxes);
     }
 }
+
+module.exports = createAdminForm;
