@@ -5,7 +5,7 @@ Then renders the checkbox's label text for that location
 */
 
 let areaBtns = null,
-    disable = require('./admin.js'),
+    disable = require('./disable_inventory.js'),
     ad = require('./admin_elements.js'),
     menu = require('../order/menu.json');
 

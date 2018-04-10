@@ -4,20 +4,13 @@ When the page is loaded
 Then admin, form rendering, and order form listener scripts are run
 */
 
-/*
-  PROMPT: focus on a data driven application
-          instead of rendering stuff then checking the data
-          check the data to render stuff
-          ex. if json array is > 0, create options for that data
-*/
-
-let disable = require('./admin/admin.js'),
-  createForm = require('./admin/create_form.js'),
-  bunEvent = require('./admin/render_checkboxes.js'),
-  areaEvent = require('./order/create_selects.js'),
+const createForm = require('./admin/create_form.js'),
+  bunEvent = require('./admin/render_buns.js'),
+  areaEvent = require('./order/render_ingredients.js'),
   showOrder = require('./order/show_order.js'),
-  el = require('./order/elements.js'),
-  multiSelect = null,
+  el = require('./order/elements.js');
+
+let multiSelect = null,
   selects = null;
 
 const createOrder = {
@@ -32,11 +25,18 @@ const createOrder = {
   messageConstructor: function (e) {
     e.preventDefault()
     this.getMultiSelect();
-    selects = document.querySelectorAll("select");
-    let hotdog = [el.user.value];
-    for(var i = 0; i < selects.length; i++) {
-      hotdog.push(selects[i].value);
+    let selects = document.querySelectorAll('select');
+    let hotdog = [
+      el.user.value,
+      selects[0].value,
+      selects[1].value,
+      el.condiments
+    ];
+    // add sides to show order 
+    if (selects.length > 3) {
+      hotdog.push(selects[3].value)
     }
+    // get showOrder function to display summary
     el.show.innerHTML = `${showOrder(hotdog)}`;
   },
   // listen for the form to submit
@@ -48,12 +48,12 @@ const createOrder = {
 /* -- Start Hot Dog Stand -- */
 
 (function startApp() {
+  // create admin form
   createForm();
-  // render checkboxes for admin controls
+  // render content based on location
   areaEvent();
+  // render admin content based on location
   bunEvent();
-  // admin control over bun options
-  // disable();
   // call form event listener 
   createOrder.formSumbit();
 })();
