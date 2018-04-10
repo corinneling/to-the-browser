@@ -4,8 +4,7 @@ When a bun type is checked in admin form
 Then disabled is added to that bun type in order form
 */
 
-const createForm = require('./create_form.js'),
-    ad = require('./admin_elements.js'),
+const ad = require('./admin_elements.js'),
     menu = require('../order/menu.json');
 
 let adminBunList = null,
@@ -13,7 +12,6 @@ let adminBunList = null,
 
 // listens for bun list checkboxes to change
 const disable = function () {
-    createForm(menu.dy.bun);
     adminBunList = document.querySelectorAll("input[type='checkbox']");
     adminBunList.forEach(function (e) {
         e.addEventListener('change', removeDisable);
@@ -22,7 +20,7 @@ const disable = function () {
 
 // removes disabled from order form bun list option when reflecting checkbox is checked
 const removeDisable = function () {
-    orderBunList = document.getElementById('bun_option').options;
+    orderBunList = document.getElementById('Bun').options;
     for (var i = 0; i < adminBunList.length; i++) {
         if (adminBunList[i].checked) {
             orderBunList[i].removeAttribute('disabled');

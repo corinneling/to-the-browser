@@ -4,45 +4,55 @@ When a location is selected
 Then renders the checkbox's label text for that location 
 */
 
-const ad = require('./admin_elements.js'),
-    lol = require('../order/location_logic.js');
+let areaBtns = null,
+    disable = require('./admin.js'),
+    ad = require('./admin_elements.js'),
+    menu = require('../order/menu.json');
 
-let bunLabels = null,
-    bunInputs = null,
-    locationBtn = document.querySelectorAll("input[type='radio']");
-// feed json array and selects to append to create options
-const createBunList = function (array) {
-    for (let i = 0; i < array.length; i++) {
-        bunLabels = document.querySelectorAll("#admin label");
-        bunInputs = document.querySelectorAll("input[type=checkbox]");
-        bunInputs.value = array[i];
-        bunInputs.name = array[i];
-        bunLabels[i].innerHTML = array[i];
+const createCheckboxes = function (area) {
+    // creates the checkboxes, labels, and container divs
+    let bunOptions = menu[area].categories[1].options;
+    for (var i = 0; i < bunOptions.length; i++) {
+        let boxes = document.createElement("input"),
+            labels = document.createElement("label"),
+            divs = document.createElement("div");
+        divs.className = "adminControls"
+        boxes.type = "checkbox";
+        boxes.setAttribute('id', `${i}`);
+        labels.setAttribute('for', `${i}`);
+        ad.admin_form.appendChild(divs);
+        divs.appendChild(boxes);
+        divs.appendChild(labels);
+        let object = menu[area].categories[1].options[i];
+        labels.appendChild(document.createTextNode(object));
+        }
+        disable();
+    }
+
+
+const clearBunOptions = function () {
+    bunTypes = document.querySelectorAll(".adminControls");
+    for (let i = 0; i < bunTypes.length; i++) {
+        bunTypes[i].remove();
     }
 }
-// clear options before changing options for diff location
-const clearBunList = function () {
-    bunLabels = document.querySelectorAll("#admin label");
-    for (let i = 0; i < bunLabels.length; i++) {
-        bunLabels[i].innerHTML = "";
-    }
-}
-// display checkbox values based on area
-const bunListByLocation = function () {
-    clearBunList();
-    if (locationBtn[0].checked) {
-        createBunList(lol.bunsFor("sd"))
-    } else if (locationBtn[1].checked) {
-        createBunList(lol.bunsFor("ny"))
+
+
+const bunsByArea = function () {
+    clearBunOptions();
+    if (areaBtns[0].checked) {
+        createCheckboxes('ny');
+    } else if (areaBtns[1].checked) {
+        createCheckboxes('sd');
     } else {
-        createBunList(lol.bunsFor("dy"))
+        createCheckboxes('dy');
     }
 }
-// listens for location radio buttons to change
-const listBunsEvent = function () {
-    locationBtn.forEach(function (e) {
-        e.addEventListener('change', bunListByLocation);
+
+const bunEvent = function () {
+    areaBtns = document.querySelectorAll('input[type=radio]');
+    areaBtns.forEach(function (e) {
+        e.addEventListener('change', bunsByArea)
     })
 }
-
-module.exports = listBunsEvent;
+module.exports = bunEvent;

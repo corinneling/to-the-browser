@@ -1,18 +1,61 @@
 {
-    "dy": {
-        "dog":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
-        "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Lettuce", "None"],
-        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"],
-        "sides": ["Chips", "Mini Hot Dogs", "Salad", "Popcorn", "Hashbrowns"]
-    },
-    "sd": {
-        "dog":  ["Fish", "Chicken", "Polish", "Beef"], 
-        "bun":  ["Avocado", "Whole Wheat", "Eggplant", "Cotton Candy", "Lettuce", "None"],
-        "cond": ["Cotton Candy", "Ketchup", "Onion", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream", "None"]
-    },
-    "ny": {
-        "dog":  ["Sushi", "Steak", "Classic", "Polish"],
-        "bun":  ["Plain", "Everthing Bagel", "Whole Wheat", "Seaweed", "Lettuce", "None"],
-        "cond": ["Ketchup", "Mustard", "Relish", "Saurkraut", "Onion", "Chips", "None"]
-    }
+        "dy": {
+            "categories": [
+                {
+                    "id": "Meat",
+                    "options":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"]
+                }, 
+                {
+                    "id": "Bun",
+                    "options":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Lettuce", "None"]
+                },
+                {
+                    "id": "Condiments",
+                    "options": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"],
+                    "multiple": true,
+                    "size": "9"
+                },
+                {
+                    "id": "Sides",
+                    "options": ["Chips", "Mini Hot Dogs", "Salad", "Popcorn", "Hashbrowns"]
+                }
+                
+            ]
+        },
+        "sd": {
+            "categories": [
+                {
+                    "id": "Meat",
+                    "options":  ["Fish", "Chicken", "Polish", "Beef"]
+                },
+                {
+                    "id": "Bun",
+                    "options":  ["Avocado", "Whole Wheat", "Eggplant", "Cotton Candy", "Lettuce", "None"]
+                }, 
+                {
+                    "id": "Condiments",
+                    "options": ["Cotton Candy", "Ketchup", "Onion", "Hot Sauce", "Mustard", "Pickles", "Deep Fried Ice Cream", "None"],
+                    "multiple": true,
+                    "size": "8"
+                }
+            ]
+     },
+        "ny": {
+            "categories": [
+                {
+                    "id": "Meat",
+                    "options":  ["Sushi", "Steak", "Classic", "Polish"]
+                },
+                {
+                    "id": "Bun",
+                    "options":  ["Plain", "Everthing Bagel", "Whole Wheat", "Seaweed", "Lettuce", "None"]
+                },
+                {
+                    "id": "Condiments",
+                    "options": ["Ketchup", "Mustard", "Relish", "Saurkraut", "Onion", "Chips", "None"],
+                    "multiple": true,
+                    "size": "7"
+                }
+            ]
+        }
 }

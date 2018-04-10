@@ -1,54 +1,64 @@
-const hotDogCategories = [
-    meat = {
-        for: "frank_option",
-        text: "Meat: *",
-        id: "frank_option",
-        div: "section_third",
-        multi: false,
-        size: false
-    },
-    bun = {
-        for: "bun_option",
-        id: "bun_option",
-        text: "Bun: *",
-        div: "section_third",
-        multi: false,
-        size: false
-    },
-    con = {
-        for: "condiments_option",
-        text: "Condiments: *",
-        id: "condiments_option",
-        div: "section",
-        multi: true,
-        size: "9"
-    }
-]
+let menu = require('./menu.json'),
+     areaBtns = null;
 
-const generateSelects = function () {
-    for (let i = 0; i < hotDogCategories.length; i++) {
-        /*
-         creates label, select, and div container
-        */
-        divs = document.createElement('div');
-        selects = document.createElement('select');
-        labels = document.createElement('label');
-        labels.htmlFor = hotDogCategories[i].for;
-        labels.appendChild(document.createTextNode(hotDogCategories[i].text));
-        selects.id = hotDogCategories[i].id;
-        selects.multiple = hotDogCategories[i].multi;
-        selects.required = true;
-        selects.size = hotDogCategories[i].size;
-        divs.className = hotDogCategories[i].div;
-        /* 
-        appends selects after name input and before submit input
-        */
-        let name = document.getElementById('nameContainer');
-        let submit = document.getElementById('submitContainer');
+const generateSelects = function (area) {
+    let name = document.getElementById('nameContainer'),
+        submit = document.getElementById('submitContainer');
+    for (let i in menu[area].categories) {
+        let object = menu[area].categories[i],
+            category = document.createElement('select'),
+            title = document.createElement('label'),
+            divs = document.createElement('div');
+        divs.className = "categories";
+        category.id = menu[area].categories.id;
+        category.size = menu[area].categories.size;
         name.parentNode.insertBefore(divs, submit);
-        divs.appendChild(labels);
-        divs.appendChild(selects);
+        divs.appendChild(title)
+        divs.appendChild(category)
+        for (let tag in object) {
+            if (tag == "id") {
+                category.setAttribute(tag, object[tag])
+                title.setAttribute('for', object[tag])
+                title.appendChild(document.createTextNode(object[tag] + ": *"));
+            } else if (tag == "options") {
+                for (let x = 0; x < object[tag].length; x++) {
+                    let ingredients = document.createElement('option');
+                    ingredients.text = object[tag][x];
+                    category.appendChild(ingredients)
+                }
+            } else if(tag == "multiple") {
+                category.setAttribute(tag, object[tag])
+            }  else if(tag == "size") {
+                category.setAttribute(tag, object[tag])
+            }
+        }
     }
 }
 
-module.exports = generateSelects;
+const clearSelects = function () {
+    categoryTypes = document.querySelectorAll(".categories");
+    for (let i = 0; i < categoryTypes.length; i++) {
+        categoryTypes[i].remove();
+    }
+}
+
+const selectsByArea = function () {
+    clearSelects();
+    if (areaBtns[0].checked) {
+        generateSelects('ny')
+    } else if (areaBtns[1].checked) {
+        generateSelects('sd')
+    } else {
+        generateSelects('dy')
+    }
+}
+
+const areaEvent = function () {
+    areaBtns = document.querySelectorAll('input[type=radio]');
+    areaBtns.forEach(function (e) {
+        e.addEventListener('change', selectsByArea)
+    })
+}
+
+
+module.exports = areaEvent;
