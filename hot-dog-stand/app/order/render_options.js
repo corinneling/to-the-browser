@@ -11,8 +11,8 @@ const menu = require('./menu.json'),
   item = [lol.dogsFor, lol.bunsFor, lol.condFor, lol.sidesFor];
 
 let hotDogOptions = null,
-    selects = null,
-    locationBtn = document.querySelectorAll("input[type='radio']");
+  selects = null,
+  locationBtn = document.querySelectorAll("input[type='radio']");
 
 // create option values for hot dog form
 // feed json array and selects to append to create options

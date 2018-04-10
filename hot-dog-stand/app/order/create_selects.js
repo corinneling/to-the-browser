@@ -26,8 +26,10 @@ const hotDogCategories = [
 ]
 
 const generateSelects = function () {
-    let orderForm = document.getElementById('orderHotDog');
     for (let i = 0; i < hotDogCategories.length; i++) {
+        /*
+         creates label, select, and div container
+        */
         divs = document.createElement('div');
         selects = document.createElement('select');
         labels = document.createElement('label');
@@ -38,11 +40,12 @@ const generateSelects = function () {
         selects.required = true;
         selects.size = hotDogCategories[i].size;
         divs.className = hotDogCategories[i].div;
-        order: document.getElementById("orderHotDog")
-        let name = document.getElementById('nameContainer')
-        let submit = document.getElementById('submitContainer')
+        /* 
+        appends selects after name input and before submit input
+        */
+        let name = document.getElementById('nameContainer');
+        let submit = document.getElementById('submitContainer');
         name.parentNode.insertBefore(divs, submit);
-        // orderForm.appendChild(divs);
         divs.appendChild(labels);
         divs.appendChild(selects);
     }

@@ -8,11 +8,12 @@ Then admin, form rendering, and order form listener scripts are run
   PROMPT: focus on a data driven application
           instead of rendering stuff then checking the data
           check the data to render stuff
+          ex. if json array is > 0, create options for that data
 */
 
 let options = require('./order/render_options.js'),
   disable = require('./admin/admin.js'),
-  generateSelects = require('./order/render_selects.js'),
+  generateSelects = require('./order/create_selects.js'),
   checkboxes = require('./admin/render_checkboxes.js'),
   showOrder = require('./order/show_order.js'),
   el = require('./order/elements.js'),
@@ -45,13 +46,12 @@ const createOrder = {
 
 (function startApp() {
   // render checkboxes for admin controls
-    generateSelects();
-    checkboxes();
+  generateSelects();
+  checkboxes();
   // admin control over bun options
-    disable();
+  disable();
   // attached options to selects based on location
-    options();
+  options();
   // call form event listener 
-    createOrder.formSumbit();
-
+  createOrder.formSumbit();
 })();
