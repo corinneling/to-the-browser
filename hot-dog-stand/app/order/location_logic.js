@@ -8,7 +8,8 @@ let menu = require('./menu.json');
 const locationLogic = {
     dogsFor: (location) => { return menu[location].dog },
     bunsFor: (location) => { return menu[location].bun },
-    condFor: (location) => { return menu[location].cond }
+    condFor: (location) => { return menu[location].cond },
+    sidesFor: (location) => { return menu[location].sides }
 }
 
 module.exports = locationLogic;
