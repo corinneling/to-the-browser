@@ -1,5 +1,20 @@
 let menu = require('./menu.json'),
-     areaBtns = null;
+    areaBtns = null;
+
+// id = string
+// options = array
+// method requires both
+// multiple = boolean (optional)
+// size = string (optional)
+// throws errors 
+const generateSelect = function (settings) {
+    // settings = id, key, area
+}
+
+// set up a function that can be tested to throw errors
+const validate = function () {
+
+}
 
 const generateSelects = function (area) {
     let name = document.getElementById('nameContainer'),
@@ -15,28 +30,41 @@ const generateSelects = function (area) {
         name.parentNode.insertBefore(divs, submit);
         divs.appendChild(title)
         divs.appendChild(category)
-        for (let tag in object) {
-            if (tag == "id") {
-                category.setAttribute(tag, object[tag])
-                title.setAttribute('for', object[tag])
-                title.appendChild(document.createTextNode(object[tag] + ": *"));
-            } else if (tag == "options") {
-                for (let x = 0; x < object[tag].length; x++) {
+        // move most of this into other func
+        addTags(object, category, title);
+    }
+}
+
+const addTags = function (object, category, title) {
+    for (let key in object) {
+        // adds select id, label for, and label text (all the same)
+        switch (key) {
+            case 'id':
+                category.setAttribute(key, object[key])
+                title.setAttribute('for', object[key])
+                title.appendChild(document.createTextNode(object[key] + ': *'));
+                break;
+            case 'options':
+                for (let x = 0; x < object[key].length; x++) {
                     let ingredients = document.createElement('option');
-                    ingredients.text = object[tag][x];
+                    ingredients.text = object[key][x];
                     category.appendChild(ingredients)
                 }
-            } else if(tag == "multiple") {
-                category.setAttribute(tag, object[tag])
-            }  else if(tag == "size") {
-                category.setAttribute(tag, object[tag])
-            }
+                break;
+            case 'multiple':
+                category.setAttribute(key, object[key])
+                break;
+            case 'size':
+                category.setAttribute(key, object[key])
+                break;
+            default:
+                return null;
         }
     }
 }
 
 const clearSelects = function () {
-    categoryTypes = document.querySelectorAll(".categories");
+    categoryTypes = document.querySelectorAll('.categories');
     for (let i = 0; i < categoryTypes.length; i++) {
         categoryTypes[i].remove();
     }
