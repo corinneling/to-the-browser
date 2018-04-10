@@ -3,10 +3,10 @@ For admin functionality
 When a location is selected
 Then renders the checkbox's label text for that location 
 */
-// required elements
+
 const ad = require('./admin_elements.js'),
-      lol = require('../order/location_logic.js');
-// file dom elements
+    lol = require('../order/location_logic.js');
+
 let bunLabels = null,
     bunInputs = null,
     locationBtn = document.querySelectorAll("input[type='radio']");

@@ -2,7 +2,8 @@
     "dy": {
         "dog":  ["Mystery Meat", "Chili", "Block of Cheese", "Beef", "Polish"],
         "bun":  ["Whole Wheat", "Classic", "Waffle", "Omelette", "Lettuce", "None"],
-        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"]
+        "cond": ["Cheese", "Chili", "Egg", "Lettuce", "Ketchup", "Mustard", "Relish", "Sprinkles", "None"],
+        "sides": ["Chips", "Mini Hot Dogs", "Salad", "Popcorn", "Hashbrowns"]
     },
     "sd": {
         "dog":  ["Fish", "Chicken", "Polish", "Beef"], 

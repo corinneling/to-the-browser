@@ -13,39 +13,36 @@ let hotDogOptions = null,
   locationBtn = document.querySelectorAll("input[type='radio']");
 
 // create option values for hot dog form
-const render = {
   // feed json array and selects to append to create options
-  createOptions: function (array, category) {
+  createOptions = function (array, category) {
     for (let i = 0; i < array.length; i++) {
       hotDogOptions = document.createElement("option");
       hotDogOptions.value = array[i];
       hotDogOptions.text = array[i];
       category.appendChild(hotDogOptions);
     }
-  },
+  }
   // clear options before changing options for diff location
-  clearOptions: function (array) {
+  clearOptions = function (array) {
     for (let i = 0; i < array.length; i++) {
       array[i].options.length = 0;
     }
-  },
+  }
   // loop through each area and selects so options are added to correct place
-  attachOptions: function (area, item) {
+  attachOptions = function (area, item) {
     for (let i = 0; i < el.selects.length; i++) {
       this.createOptions(item[i](area), el.selects[i]);
     }
   }
-}
-
 // set values for options based on which radio btn location chosen
 const hotDogOptionsByLocation = function () {
-  render.clearOptions(el.selects);
+  clearOptions(el.selects);
   if (locationBtn[0].checked) {
-    render.attachOptions(`sd`, item);
+    attachOptions(`sd`, item);
   } else if (locationBtn[1].checked) {
-    render.attachOptions(`ny`, item);
+    attachOptions(`ny`, item);
   } else {
-    render.attachOptions(`dy`, item);
+    attachOptions(`dy`, item);
   }
 }
 
