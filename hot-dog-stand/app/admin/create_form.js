@@ -5,7 +5,7 @@ Then form shell is created
 */
 let ad = require('./admin_elements.js');
 
-const createAdminForm = function () {
+const adminForm = function () {
     // creates admin form tag, text & appends it before order form
     ad.admin_form.setAttribute('id', 'admin');
     ad.order.parentNode.insertBefore(ad.admin_form, ad.order);
@@ -15,4 +15,4 @@ const createAdminForm = function () {
     ad.admin_form.appendChild(ad.admin_p);
 }
 
-module.exports = createAdminForm;
+module.exports = adminForm;

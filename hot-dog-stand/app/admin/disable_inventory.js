@@ -5,6 +5,7 @@ Then disabled is added to that bun type in order form
 */
 
 const ad = require('./admin_elements.js'),
+    controlDisable = require('./control_disable.js'),
     menu = require('../order/menu.json');
 
 let adminBunList = null,
@@ -23,9 +24,9 @@ const removeDisable = function () {
     orderBunList = document.getElementById('Bun').options;
     for (var i = 0; i < adminBunList.length; i++) {
         if (adminBunList[i].checked) {
-            orderBunList[i].removeAttribute('disabled');
+            controlDisable(orderBunList[i], true);
         } else if (adminBunList[i].checked == false) {
-            orderBunList[i].setAttribute('disabled', true);
+            controlDisable(orderBunList[i], false);
         }
     }
 };

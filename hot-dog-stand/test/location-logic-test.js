@@ -1,48 +1,18 @@
 const assert = require('assert'),
   menu = require('../app/order/menu.json'),
-  lol = require('../app/order/location_logic.js');
+  location = require('../app/order/data_logic.js');
 
-describe('Dogs Location', function () {
-  it('returns json dy.dog if parameter is Dayton', function () {
-    let location = "dy";
-    assert.deepStrictEqual(lol.dogsFor(location), menu.dy.dog);
+describe('Location', function () {
+  it('returns the new york categories array of objects with ny parameters', function () {
+    let area = "ny";
+    assert.deepStrictEqual(location(area), menu.ny.categories);
   });
-  it('returns json sd.dog if parameter is San Diego', function () {
-    let location = "sd";
-    assert.deepStrictEqual(lol.dogsFor(location), menu.sd.dog);
+  it('returns the san diego categories array of objects with sd parameters', function () {
+    let area = "sd";
+    assert.deepStrictEqual(location(area), menu.sd.categories);
   });
-  it('returns json ny.dog if parameter is not dayton or san diego', function () {
-    let location = "ny";
-    assert.deepStrictEqual(lol.dogsFor(location), menu.ny.dog);
-  });
-});
-
-describe('Buns Location', function () {
-  it('returns json dy.bun if parameter is Dayton', function () {
-    let location = "dy";
-    assert.deepStrictEqual(lol.bunsFor(location), menu.dy.bun);
-  });
-  it('returns json sd.bun if parameter is San Diego', function () {
-    let location = "sd";
-    assert.deepStrictEqual(lol.bunsFor(location), menu.sd.bun);
-  });
-  it('returns json ny.bun if parameter is not dayton or san diego', function () {
-    let location = "ny";
-    assert.deepStrictEqual(lol.bunsFor(location), menu.ny.bun);
-  });
-});
-
-describe('Condiments Location', function () {
-  it('returns json dy.cond if parameter is Dayton', function () {
-    let location = "dy";
-    assert.deepStrictEqual(lol.condFor(location), menu.dy.cond);
-  });
-  it('returns json sd.cond if parameter is San Diego', function () {
-    let location = "sd";
-    assert.deepStrictEqual(lol.condFor(location), menu.sd.cond);
-  });
-  it('returns json ny.cond if parameter is not dayton or san diego', function () {
-    let location = "ny";
-    assert.deepStrictEqual(lol.condFor(location), menu.ny.cond);
+  it('returns the dayton categories array of objects with dy parameters', function () {
+    let area = "dy";
+    assert.deepStrictEqual(location(area), menu.dy.categories);
   });
 });
